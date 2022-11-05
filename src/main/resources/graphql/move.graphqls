@@ -1,0 +1,5 @@
+# A move is an ability a Pokémon can use in battle.
+type Move {
+    id: Int! # The ID of the move
+    name: String! # The name of the move, displayed to the user.
+}
