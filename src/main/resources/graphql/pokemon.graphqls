@@ -1,6 +1,9 @@
 # An object representative of a Pokémon
 type Pokemon {
-    id: Int! # The NationalDex ID of the Pokémon
-    name: String! # The Pokémon's name
-    moves: [Move!]! # A list of moves that the Pokémon can learn
+    # The NationalDex ID of the Pokémon
+    id: Int!
+    # The Pokémon's name
+    name: String!
+    # A list of moves that the Pokémon can learn
+    moves: [Move!]!
 }

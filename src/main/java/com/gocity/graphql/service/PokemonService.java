@@ -3,17 +3,21 @@ package com.gocity.graphql.service;
 import com.gocity.graphql.model.Pokemon;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Future;
 
 @Service
 public class PokemonService {
 
-    public CompletableFuture<Pokemon> findPokemon(int id, String name) {
-        return CompletableFuture.supplyAsync(() -> new Pokemon(id, name, List.of()));
+    public Future<Pokemon> findPokemon(int id, String name) {
+        return CompletableFuture.supplyAsync(() -> Pokemon.builder()
+            .id(id)
+            .name(name)
+            .build()
+        );
     }
 
-    public CompletableFuture<Pokemon> findPokemon(int id, String name, int delay) {
+    public Future<Pokemon> findPokemon(int id, String name, int delay) {
         return CompletableFuture.supplyAsync(() -> {
             try {
                 Thread.sleep(delay);
@@ -21,7 +25,10 @@ public class PokemonService {
                 throw new RuntimeException(e);
             }
 
-            return new Pokemon(id, name, List.of());
+            return Pokemon.builder()
+                .id(id)
+                .name(name)
+                .build();
         });
     }
 }

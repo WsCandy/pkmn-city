@@ -6,17 +6,18 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Future;
 
 @Service
 public class MoveService {
 
-    public CompletableFuture<List<Move>> getMoves(Pokemon pokemon) {
+    public Future<List<Move>> getMoves(Pokemon pokemon) {
         return CompletableFuture.supplyAsync(() -> List.of(
             new Move(1, "Leech Seed")
         ));
     }
 
-    public CompletableFuture<List<Move>> getMoves(Pokemon pokemon, int delay) {
+    public Future<List<Move>> getMoves(Pokemon pokemon, int delay) {
         return CompletableFuture.supplyAsync(() -> {
             try {
                 Thread.sleep(delay);

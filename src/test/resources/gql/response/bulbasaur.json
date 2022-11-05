@@ -1,0 +1,10 @@
+{
+    "id": 1,
+    "name": "Bulbasaur",
+    "moves": [
+        {
+            "id": 1,
+            "name": "Leech Seed"
+        }
+    ]
+}

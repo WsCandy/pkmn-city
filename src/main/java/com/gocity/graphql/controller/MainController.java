@@ -10,15 +10,17 @@ import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.stereotype.Controller;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Future;
 
 @Controller
 public class MainController {
 
-    PokemonService pokemonService;
-    MoveService moveService;
+    private final PokemonService pokemonService;
+    private final MoveService moveService;
 
     @Autowired
     MainController(PokemonService pokemonService, MoveService movesService) {
@@ -27,12 +29,13 @@ public class MainController {
     }
 
     @QueryMapping
-    public CompletableFuture<Pokemon> pokemon(@Argument Optional<String> name, @Argument Optional<Integer> id) {
+    public Future<Pokemon> pokemon(@Argument Optional<String> name, @Argument Optional<Integer> id) {
         return pokemonService.findPokemon(id.orElse(1), name.orElse("Squirtle"));
     }
 
     @SchemaMapping
-    public CompletableFuture<List<Move>> moves(Pokemon pokemon) {
+    public Future<List<Move>> moves(Pokemon pokemon) {
         return moveService.getMoves(pokemon, 1000);
     }
+
 }

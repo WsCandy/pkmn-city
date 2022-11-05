@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.7.5-SNAPSHOT'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 	id 'java'
+	id "io.freefair.lombok" version "6.5.1"
 }
 
 group = 'com.gocity'
@@ -15,11 +16,12 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	implementation 'org.springframework.boot:spring-boot-starter-websocket:2.7.5'
-	implementation 'org.springframework.boot:spring-boot-starter-graphql:2.7.5'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-graphql'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.graphql:spring-graphql-test'
+	testImplementation 'org.springframework:spring-webflux'
 }
 
 tasks.named('test') {
