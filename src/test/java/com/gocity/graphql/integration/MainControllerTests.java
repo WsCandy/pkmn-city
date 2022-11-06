@@ -9,7 +9,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.graphql.GraphQlTest;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.graphql.test.tester.GraphQlTester;
+import org.springframework.stereotype.Service;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;
@@ -18,13 +22,16 @@ import java.util.stream.Stream;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.samePropertyValuesAs;
 
-class MainControllerTests extends IntegrationTest {
+@ActiveProfiles("test")
+@GraphQlTest(includeFilters = @ComponentScan.Filter(Service.class))
+class MainControllerTests {
 
     private final ObjectMapper mapper;
+    private final GraphQlTester tester;
 
     @Autowired
     public MainControllerTests(GraphQlTester tester, ObjectMapper mapper) {
-        super(tester);
+        this.tester = tester;
         this.mapper = mapper;
     }
 

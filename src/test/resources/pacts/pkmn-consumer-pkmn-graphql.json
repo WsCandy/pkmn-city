@@ -1,0 +1,122 @@
+{
+  "consumer": {
+    "name": "pkmn-consumer"
+  },
+  "interactions": [
+    {
+      "description": "a graphql query",
+      "providerStates": [
+        {
+          "name": "there is a Pokemon with moves in the database"
+        }
+      ],
+      "request": {
+        "body": {
+          "query": "{ pokemon(name: \"Bulbasaur\", id: 1) { id name moves { id name } }}"
+        },
+        "method": "POST",
+        "path": "/graphql"
+      },
+      "response": {
+        "body": {
+          "data": {
+            "pokemon": {
+              "id": 100,
+              "moves": [
+                {
+                  "id": 100,
+                  "name": "string"
+                }
+              ],
+              "name": "string"
+            }
+          }
+        },
+        "generators": {
+          "body": {
+            "$.data.pokemon.id": {
+              "max": 2147483647,
+              "min": 0,
+              "type": "RandomInt"
+            },
+            "$.data.pokemon.moves[0].id": {
+              "max": 2147483647,
+              "min": 0,
+              "type": "RandomInt"
+            },
+            "$.data.pokemon.moves[0].name": {
+              "size": 20,
+              "type": "RandomString"
+            },
+            "$.data.pokemon.name": {
+              "size": 20,
+              "type": "RandomString"
+            }
+          }
+        },
+        "headers": {
+          "Content-Type": "application/json; charset=UTF-8"
+        },
+        "matchingRules": {
+          "body": {
+            "$.data.pokemon.id": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ]
+            },
+            "$.data.pokemon.moves[0].id": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ]
+            },
+            "$.data.pokemon.moves[0].name": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.data.pokemon.name": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          },
+          "header": {
+            "Content-Type": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "application/json(;\\s?charset=[\\w\\-]+)?"
+                }
+              ]
+            }
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-jvm": {
+      "version": "4.3.16"
+    },
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  },
+  "provider": {
+    "name": "pkmn-graphql"
+  }
+}
