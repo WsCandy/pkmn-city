@@ -1,7 +1,7 @@
-package com.gocity.graphql.integration;
+package com.gocity.graphql.pokemon.integration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gocity.graphql.model.Pokemon;
+import com.gocity.graphql.pokemon.Pokemon;
 import com.gocity.graphql.util.ResourceLoader;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Named;
@@ -24,13 +24,13 @@ import static org.hamcrest.Matchers.samePropertyValuesAs;
 
 @ActiveProfiles("test")
 @GraphQlTest(includeFilters = @ComponentScan.Filter(Service.class))
-class MainControllerTests {
+class PokemonControllerTest {
 
     private final ObjectMapper mapper;
     private final GraphQlTester tester;
 
     @Autowired
-    public MainControllerTests(GraphQlTester tester, ObjectMapper mapper) {
+    public PokemonControllerTest(GraphQlTester tester, ObjectMapper mapper) {
         this.tester = tester;
         this.mapper = mapper;
     }

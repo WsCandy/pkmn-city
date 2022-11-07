@@ -1,6 +1,5 @@
-package com.gocity.graphql.service;
+package com.gocity.graphql.pokemon;
 
-import com.gocity.graphql.model.Pokemon;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.CompletableFuture;

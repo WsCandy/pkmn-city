@@ -1,4 +1,4 @@
-package com.gocity.graphql.contract.provider;
+package com.gocity.graphql.pokemon.contract.provider;
 
 import au.com.dius.pact.provider.junit5.PactVerificationContext;
 import au.com.dius.pact.provider.junit5.PactVerificationInvocationContextProvider;
@@ -6,10 +6,10 @@ import au.com.dius.pact.provider.junitsupport.Provider;
 import au.com.dius.pact.provider.junitsupport.State;
 import au.com.dius.pact.provider.junitsupport.loader.PactFolder;
 import com.gocity.graphql.GraphqlApplication;
-import com.gocity.graphql.model.Move;
-import com.gocity.graphql.model.Pokemon;
-import com.gocity.graphql.service.MoveService;
-import com.gocity.graphql.service.PokemonService;
+import com.gocity.graphql.move.Move;
+import com.gocity.graphql.move.MoveService;
+import com.gocity.graphql.pokemon.Pokemon;
+import com.gocity.graphql.pokemon.PokemonService;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,7 +1,6 @@
-package com.gocity.graphql.service;
+package com.gocity.graphql.move;
 
-import com.gocity.graphql.model.Move;
-import com.gocity.graphql.model.Pokemon;
+import com.gocity.graphql.pokemon.Pokemon;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

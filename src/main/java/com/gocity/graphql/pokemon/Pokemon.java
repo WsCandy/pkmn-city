@@ -1,5 +1,6 @@
-package com.gocity.graphql.model;
+package com.gocity.graphql.pokemon;
 
+import com.gocity.graphql.move.Move;
 import lombok.Builder;
 import lombok.Data;
 

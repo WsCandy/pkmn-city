@@ -1,4 +1,4 @@
-package com.gocity.graphql.model;
+package com.gocity.graphql.move;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
