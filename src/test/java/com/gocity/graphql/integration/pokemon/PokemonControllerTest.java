@@ -1,4 +1,4 @@
-package com.gocity.graphql.pokemon.integration;
+package com.gocity.graphql.integration.pokemon;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gocity.graphql.pokemon.Pokemon;

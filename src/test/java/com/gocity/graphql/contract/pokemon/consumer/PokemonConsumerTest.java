@@ -1,4 +1,4 @@
-package com.gocity.graphql.pokemon.contract.consumer;
+package com.gocity.graphql.contract.pokemon.consumer;
 
 import au.com.dius.pact.consumer.MockServer;
 import au.com.dius.pact.consumer.dsl.PactDslWithProvider;
