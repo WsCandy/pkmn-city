@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "com.gocity.graphql.hello.grpc";
+
+service HelloService {
+  rpc hello(Request) returns (Response) {}
+}
+
+message Request {
+  string text = 1;
+}
+
+message Response {
+  string text = 1;
+}
