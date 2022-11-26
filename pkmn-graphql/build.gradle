@@ -1,0 +1,55 @@
+plugins {
+    id "org.springframework.boot" version "2.7.5-SNAPSHOT"
+    id "io.spring.dependency-management" version "1.0.15.RELEASE"
+    id "java"
+    id "com.google.protobuf" version "0.9.1"
+    id "io.freefair.lombok" version "6.5.1"
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/milestone" }
+    maven { url "https://repo.spring.io/snapshot" }
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-graphql"
+
+    implementation group: "io.grpc", name: "grpc-all", version: "1.51.0"
+    implementation group: "com.google.protobuf", name: "protobuf-java-util", version: "3.21.9"
+
+    testImplementation "org.springframework.graphql:spring-graphql-test"
+    testImplementation "commons-io:commons-io:2.11.0"
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test") {
+        exclude group: "com.vaadin.external.google", module: "android-json"
+    }
+
+    testImplementation "au.com.dius.pact.consumer:junit5:4.4.2"
+
+    protobuf files("../proto")
+}
+
+protobuf {
+    protoc {
+        // https://github.com/grpc/grpc-java/issues/7690#issuecomment-747196215
+        artifact = "com.google.protobuf:protoc:3.12.2:osx-x86_64"
+    }
+
+    plugins {
+        grpc {
+            artifact = "io.grpc:protoc-gen-grpc-java:1.51.0"
+        }
+    }
+
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {}
+        }
+    }
+}
+
+tasks.named("test") {
+    useJUnitPlatform()
+}

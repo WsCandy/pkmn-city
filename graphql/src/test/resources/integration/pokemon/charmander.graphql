@@ -1,6 +1,0 @@
-{
-    pokemon(name: "Charmander", id: 4) {
-        id
-        name
-    }
-}

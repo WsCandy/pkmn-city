@@ -1,0 +1,6 @@
+{
+    pokemon(id: 7) {
+        id
+        name
+    }
+}

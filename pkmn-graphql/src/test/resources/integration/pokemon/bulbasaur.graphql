@@ -1,0 +1,6 @@
+{
+    pokemon(name: "Bulbasaur", id: 1) {
+        id
+        name
+    }
+}
