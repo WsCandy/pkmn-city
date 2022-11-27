@@ -22,9 +22,8 @@ public class PokemonService extends PokemonServiceGrpc.PokemonServiceImplBase {
 
     @Override
     public void find(PokemonRequest request, StreamObserver<PokemonResponse> responseObserver) {
-        var response = PokemonResponse.newBuilder();
         var result = repository.findBy(request);
-
+        
         if (result.isEmpty()) {
             var NOT_FOUND = Status.NOT_FOUND
                 .withDescription("Cannot find requested Pokémon")
@@ -34,9 +33,7 @@ public class PokemonService extends PokemonServiceGrpc.PokemonServiceImplBase {
         }
 
         result.ifPresent(pokemon -> {
-            response.setName(pokemon.getName());
-            response.setId(pokemon.getId());
-            responseObserver.onNext(response.build());
+            responseObserver.onNext(pokemon.toResponse());
             responseObserver.onCompleted();
         });
     }

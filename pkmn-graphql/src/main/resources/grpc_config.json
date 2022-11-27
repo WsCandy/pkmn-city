@@ -1,0 +1,24 @@
+{
+    "load_balancing_config": {
+        "round_robin": {}
+    },
+    "methodConfig": [
+        {
+            "name": [
+                {
+                    "service": "pokemon.PokemonService"
+                }
+            ],
+            "retryPolicy": {
+                "maxAttempts": 3,
+                "initialBackoff": "0.5s",
+                "maxBackoff": "30s",
+                "backoffMultiplier": 2,
+                "retryableStatusCodes": [
+                    "UNAVAILABLE"
+                ]
+            },
+            "timeout": "5s"
+        }
+    ]
+}

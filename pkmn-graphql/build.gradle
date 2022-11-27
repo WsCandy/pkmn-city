@@ -16,6 +16,7 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web"
     implementation "org.springframework.boot:spring-boot-starter-graphql"
 
+    implementation group: "net.javacrumbs.future-converter", name: "future-converter-java8-guava", version: "1.2.0"
     implementation group: "io.grpc", name: "grpc-all", version: "1.51.0"
     implementation group: "com.google.protobuf", name: "protobuf-java-util", version: "3.21.9"
     implementation "commons-io:commons-io:2.11.0"

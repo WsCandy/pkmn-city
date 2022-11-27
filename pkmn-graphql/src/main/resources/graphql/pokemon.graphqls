@@ -4,6 +4,8 @@ type Pokemon {
     id: Int!
     # The Pokémon's name
     name: String!
-    # A list of moves that the Pokémon can learn
-    moves: [Move!]!
+    # The Pokémon's species
+    species: String!
+    # A description of the Pokémon
+    description: String!
 }

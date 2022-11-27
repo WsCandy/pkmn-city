@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 @Slf4j
 @Component
@@ -25,8 +26,6 @@ public class PokemonRepository {
         var test = FileUtils.readFileToString(file, StandardCharsets.UTF_8);
 
         pkmn = mapper.readValue(test, mapper.getTypeFactory().constructCollectionType(List.class, PokemonDAO.class));
-
-        log.debug("Loaded Pokémon data in to memory: {}", pkmn);
     }
 
     public Optional<PokemonDAO> findBy(Pokemon.PokemonRequest request) {
@@ -42,7 +41,15 @@ public class PokemonRepository {
             return findBy(request.getName());
         }
 
-        return Optional.empty();
+        return findRandom();
+    }
+
+    private Optional<PokemonDAO> findRandom() {
+        var r = new Random();
+
+        return pkmn.stream()
+            .skip(r.nextInt(pkmn.size()))
+            .findAny();
     }
 
     private Optional<PokemonDAO> findBy(int id) {

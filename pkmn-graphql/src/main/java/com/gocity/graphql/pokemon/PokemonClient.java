@@ -10,14 +10,15 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Future;
+
+import static net.javacrumbs.futureconverter.java8guava.FutureConverter.toCompletableFuture;
 
 @Slf4j
 @Service
 public class PokemonClient {
 
-    private PokemonServiceGrpc.PokemonServiceBlockingStub stub;
+    private PokemonServiceGrpc.PokemonServiceFutureStub stub;
 
     @Autowired
     public PokemonClient(@Qualifier("pkmn-channel") Channel channel) {
@@ -25,7 +26,7 @@ public class PokemonClient {
     }
 
     protected void setStub(Channel channel) {
-        this.stub = PokemonServiceGrpc.newBlockingStub(channel);
+        this.stub = PokemonServiceGrpc.newFutureStub(channel);
     }
 
     public Future<PokemonResponse> findPokemon(Optional<Integer> id, Optional<String> name) {
@@ -34,6 +35,6 @@ public class PokemonClient {
         id.ifPresent(request::setId);
         name.ifPresent(request::setName);
 
-        return CompletableFuture.supplyAsync(() -> stub.find(request.build()));
+        return toCompletableFuture(stub.find(request.build()));
     }
 }
