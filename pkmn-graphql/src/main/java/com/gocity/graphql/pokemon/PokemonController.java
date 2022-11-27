@@ -12,15 +12,15 @@ import java.util.concurrent.Future;
 @Controller
 public class PokemonController {
 
-    private final PokemonClient pokemonService;
+    private final PokemonClient pokemonClient;
 
     @Autowired
     PokemonController(PokemonClient pokemonClient) {
-        this.pokemonService = pokemonClient;
+        this.pokemonClient = pokemonClient;
     }
 
     @QueryMapping
     public Future<Pokemon.PokemonResponse> pokemon(@Argument Optional<String> name, @Argument Optional<Integer> id) {
-        return pokemonService.findPokemon(id, name);
+        return pokemonClient.findPokemon(id, name);
     }
 }
