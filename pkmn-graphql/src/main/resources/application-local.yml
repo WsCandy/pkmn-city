@@ -1,3 +1,7 @@
+logging:
+  level:
+    com.gocity.graphql: DEBUG
+    
 spring:
   graphql:
     graphiql:

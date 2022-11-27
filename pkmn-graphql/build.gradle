@@ -18,9 +18,9 @@ dependencies {
 
     implementation group: "io.grpc", name: "grpc-all", version: "1.51.0"
     implementation group: "com.google.protobuf", name: "protobuf-java-util", version: "3.21.9"
+    implementation "commons-io:commons-io:2.11.0"
 
     testImplementation "org.springframework.graphql:spring-graphql-test"
-    testImplementation "commons-io:commons-io:2.11.0"
 
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude group: "com.vaadin.external.google", module: "android-json"

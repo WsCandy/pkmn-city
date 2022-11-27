@@ -2,6 +2,8 @@ syntax = "proto3";
 
 option java_package = "common.proto.pokemon";
 
+package pokemon;
+
 service PokemonService {
   rpc find(PokemonRequest) returns (PokemonResponse) {}
 }
@@ -14,4 +16,6 @@ message PokemonRequest {
 message PokemonResponse {
   uint32 id = 1;
   string name = 2;
+  string species = 3;
+  string description = 4;
 }
