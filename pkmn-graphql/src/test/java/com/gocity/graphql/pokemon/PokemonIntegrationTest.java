@@ -1,12 +1,9 @@
-package com.gocity.graphql.integration.pokemon;
+package com.gocity.graphql.pokemon;
 
-import com.gocity.graphql.integration.pokemon.mock.PokemonServiceFindMock;
-import com.gocity.graphql.pokemon.PokemonClient;
+import com.gocity.graphql.pokemon.mock.PokemonServiceFindMock;
+import com.gocity.graphql.util.MockGrpcServer;
 import com.gocity.graphql.util.ResourceLoader;
-import io.grpc.inprocess.InProcessChannelBuilder;
-import io.grpc.inprocess.InProcessServerBuilder;
 import io.grpc.testing.GrpcCleanupRule;
-import io.grpc.util.MutableHandlerRegistry;
 import org.apache.commons.io.FileUtils;
 import org.junit.Rule;
 import org.junit.jupiter.api.BeforeEach;
@@ -28,39 +25,25 @@ import java.util.stream.Stream;
 
 @ActiveProfiles("test")
 @GraphQlTest(includeFilters = {@ComponentScan.Filter(Service.class), @ComponentScan.Filter(Configuration.class)})
-class PokemonControllerTest {
+class PokemonIntegrationTest {
 
     @Rule
     public final GrpcCleanupRule grpc = new GrpcCleanupRule();
 
+    private MockGrpcServer server;
     private final GraphQlTester tester;
     private final PokemonClient client;
-    private final MutableHandlerRegistry serviceRegistry = new MutableHandlerRegistry();
 
     @Autowired
-    public PokemonControllerTest(GraphQlTester tester, PokemonClient client) {
+    public PokemonIntegrationTest(GraphQlTester tester, PokemonClient client) {
         this.tester = tester;
         this.client = client;
     }
 
     @BeforeEach
     public void setup() throws Exception {
-        var name = InProcessServerBuilder.generateName();
-
-        grpc.register(InProcessServerBuilder.forName(name)
-            .fallbackHandlerRegistry(serviceRegistry)
-            .directExecutor()
-            .build()
-            .start()
-        );
-
-        var channel = grpc.register(
-            InProcessChannelBuilder.forName(name)
-                .directExecutor()
-                .build()
-        );
-
-        client.setStub(channel);
+        server = new MockGrpcServer(grpc);
+        client.setStub(server.getChannel());
     }
 
     private static Stream<Arguments> pokemonResponseProvider() throws Exception {
@@ -77,7 +60,7 @@ class PokemonControllerTest {
         var document = FileUtils.readFileToString(query, StandardCharsets.UTF_8);
         var expected = FileUtils.readFileToString(response, StandardCharsets.UTF_8);
 
-        serviceRegistry.addService(new PokemonServiceFindMock(expected));
+        server.addService(new PokemonServiceFindMock(expected));
 
         tester.document(document)
             .execute()

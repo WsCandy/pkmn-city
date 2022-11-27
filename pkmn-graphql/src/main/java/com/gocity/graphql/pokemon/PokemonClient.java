@@ -24,7 +24,7 @@ public class PokemonClient {
         this.setStub(channel);
     }
 
-    public void setStub(Channel channel) {
+    protected void setStub(Channel channel) {
         this.stub = PokemonServiceGrpc.newBlockingStub(channel);
     }
 

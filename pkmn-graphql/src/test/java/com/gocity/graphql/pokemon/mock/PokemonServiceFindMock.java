@@ -1,4 +1,4 @@
-package com.gocity.graphql.integration.pokemon.mock;
+package com.gocity.graphql.pokemon.mock;
 
 import com.google.protobuf.util.JsonFormat;
 import common.proto.pokemon.Pokemon;
