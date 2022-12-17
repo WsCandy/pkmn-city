@@ -2,8 +2,6 @@ package com.gocity.pokemon;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import common.proto.pokemon.Pokemon;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
@@ -14,7 +12,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
-@Slf4j
 @Component
 public class PokemonRepository {
 
@@ -22,8 +19,8 @@ public class PokemonRepository {
 
     PokemonRepository(@Value("classpath:data/pokemon.json") Resource data) throws IOException {
         var mapper = new ObjectMapper();
-        var file = data.getFile();
-        var test = FileUtils.readFileToString(file, StandardCharsets.UTF_8);
+        var stream = data.getInputStream();
+        var test = new String(stream.readAllBytes(), StandardCharsets.UTF_8);
 
         pkmn = mapper.readValue(test, mapper.getTypeFactory().constructCollectionType(List.class, PokemonDAO.class));
     }
