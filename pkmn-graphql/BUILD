@@ -14,8 +14,16 @@ java_plugin(
 
 java_binary(
     name = "app",
-    srcs = glob(["src/main/java/**/*.java"]),
     main_class = "com.gocity.graphql.GraphqlApplication",
+    runtime_deps = [
+        ":deps",
+    ],
+)
+
+java_library(
+    name = "deps",
+    srcs = glob(["src/main/java/**/*.java"]),
+    resources = glob(["src/main/resources/**/*"]),
     deps = [
         ":lombok",
         "@io_grpc_grpc_java//api",
@@ -25,6 +33,7 @@ java_binary(
         "@maven//:com_graphql_java_graphql_java",
         "@maven//:commons_io_commons_io",
         "@maven//:net_javacrumbs_future_converter_future_converter_java8_guava",
+        "@maven//:org_slf4j_slf4j_api",
         "@maven//:org_springframework_boot_spring_boot",
         "@maven//:org_springframework_boot_spring_boot_autoconfigure",
         "@maven//:org_springframework_boot_spring_boot_starter_graphql",
