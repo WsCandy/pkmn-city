@@ -16,6 +16,13 @@ http_archive(
     url = "https://github.com/bazelbuild/rules_jvm_external/archive/1498ac6ccd3ea9cdb84afed65aa257c57abf3e0a.zip",
 )
 
+http_archive(
+    name = "contrib_rules_jvm",
+    sha256 = "548f0583192ff79c317789b03b882a7be9b1325eb5d3da5d7fdcc4b7ca69d543",
+    strip_prefix = "rules_jvm-0.9.0",
+    url = "https://github.com/bazel-contrib/rules_jvm/archive/refs/tags/v0.9.0.tar.gz",
+)
+
 load("@rules_jvm_external//:defs.bzl", "maven_install")
 load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS")
 load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS")
@@ -34,6 +41,10 @@ GRPC_VERSION = "1.5.1"
 
 SL4J_VERSION = "1.7.0"
 
+JUNIT_JUPITER_VERSION = "5.9.1"
+
+JUNIT_PLATFORM_VERSION = "1.9.1"
+
 # Java Dependencies
 maven_install(
     artifacts = [
@@ -50,6 +61,16 @@ maven_install(
         "org.springframework.boot:spring-boot-starter-web:%s" % SPRING_BOOT_VERSION,
         "org.springframework.boot:spring-boot-starter:%s" % SPRING_BOOT_VERSION,
         "org.springframework.boot:spring-boot-starter-graphql:%s" % SPRING_BOOT_VERSION,
+        "org.springframework.graphql:spring-graphql-test:1.1.0",
+        "org.springframework.boot:spring-boot-starter-test:%s" % SPRING_BOOT_VERSION,
+        "org.hamcrest:hamcrest:2.2",
+        "org.springframework.boot:spring-boot-test-autoconfigure:%s" % SPRING_BOOT_VERSION,
+        "com.google.protobuf:protobuf-java-util:3.21.12",
+        "org.junit.platform:junit-platform-launcher:%s" % JUNIT_PLATFORM_VERSION,
+        "org.junit.platform:junit-platform-reporting:%s" % JUNIT_PLATFORM_VERSION,
+        "org.junit.jupiter:junit-jupiter-api:%s" % JUNIT_JUPITER_VERSION,
+        "org.junit.jupiter:junit-jupiter-params:%s" % JUNIT_JUPITER_VERSION,
+        "org.junit.jupiter:junit-jupiter-engine:%s" % JUNIT_JUPITER_VERSION,
     ] + IO_GRPC_GRPC_JAVA_ARTIFACTS + PROTOBUF_MAVEN_ARTIFACTS,
     generate_compat_repositories = True,
     override_targets = IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS,
@@ -61,3 +82,22 @@ maven_install(
 load("@maven//:compat.bzl", "compat_repositories")
 
 compat_repositories()
+
+CONTRIB_RULES_JVM_VERSION = "0.9.0"
+
+CONTRIB_RULES_JVM_SHA = "548f0583192ff79c317789b03b882a7be9b1325eb5d3da5d7fdcc4b7ca69d543"
+
+http_archive(
+    name = "contrib_rules_jvm",
+    sha256 = CONTRIB_RULES_JVM_SHA,
+    strip_prefix = "rules_jvm-%s" % CONTRIB_RULES_JVM_VERSION,
+    url = "https://github.com/bazel-contrib/rules_jvm/archive/refs/tags/v%s.tar.gz" % CONTRIB_RULES_JVM_VERSION,
+)
+
+load("@contrib_rules_jvm//:repositories.bzl", "contrib_rules_jvm_deps")
+
+contrib_rules_jvm_deps()
+
+load("@contrib_rules_jvm//:setup.bzl", "contrib_rules_jvm_setup")
+
+contrib_rules_jvm_setup()

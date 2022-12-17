@@ -1,1 +1,2 @@
-build --java_language_version=17 --java_runtime_version=17 --nojava_header_compilation -- --spring.profiles.active=local
+build --java_language_version=17 --java_runtime_version=17 --nojava_header_compilation
+test --java_language_version=17 --java_runtime_version=17 --test_output=streamed

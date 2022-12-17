@@ -1,3 +1,6 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+load("@contrib_rules_jvm//java:defs.bzl", "JUNIT5_DEPS", "java_test_suite")
+
 java_library(
     name = "lombok",
     exported_plugins = [":lombok_plugin"],
@@ -15,15 +18,56 @@ java_plugin(
 java_binary(
     name = "app",
     main_class = "com.gocity.graphql.GraphqlApplication",
-    runtime_deps = [
+    runtime_deps = [":deps"],
+)
+
+java_test_suite(
+    name = "tests",
+    srcs = glob(["src/test/java/**/*.java"]),
+    runner = "junit5",
+    test_suffixes = ["Test.java"],
+    runtime_deps = JUNIT5_DEPS,
+    deps = [
         ":deps",
+        ":test-resources",
+        "@io_grpc_grpc_java//api",
+        "@io_grpc_grpc_java//core:inprocess",
+        "@io_grpc_grpc_java//core:util",
+        "@io_grpc_grpc_java//stub",
+        "@io_grpc_grpc_java//testing",
+        "@maven//:com_google_protobuf_protobuf_java_util",
+        "@maven//:commons_io_commons_io",
+        "@maven//:junit_junit",
+        "@maven//:org_hamcrest_hamcrest",
+        "@maven//:org_springframework_boot_spring_boot_starter_test",
+        "@maven//:org_springframework_boot_spring_boot_test_autoconfigure",
+        "@maven//:org_springframework_graphql_spring_graphql_test",
+        "@maven//:org_springframework_spring_beans",
+        "@maven//:org_springframework_spring_context",
+        "@maven//:org_springframework_spring_core",
+        "@maven//:org_springframework_spring_test",
+        "@pkmn-city//proto:pokemon_java_grpc",
+        "@pkmn-city//proto:pokemon_proto_java",
+        artifact("org.junit.jupiter:junit-jupiter-api"),
+        artifact("org.junit.jupiter:junit-jupiter-params"),
     ],
 )
 
 java_library(
+    name = "test-resources",
+    resources = glob([
+        "src/test/resources/**/*",
+    ]),
+)
+
+java_library(
     name = "deps",
-    srcs = glob(["src/main/java/**/*.java"]),
-    resources = glob(["src/main/resources/**/*"]),
+    srcs = glob([
+        "src/main/java/**/*.java",
+    ]),
+    resources = glob([
+        "src/main/resources/**/*",
+    ]),
     runtime_deps = [
         "@io_grpc_grpc_java//netty",
     ],

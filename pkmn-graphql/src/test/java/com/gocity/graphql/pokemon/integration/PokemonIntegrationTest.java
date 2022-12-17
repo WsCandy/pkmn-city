@@ -1,10 +1,10 @@
-package com.gocity.graphql.pokemon;
+package com.gocity.graphql.pokemon.integration;
 
+import com.gocity.graphql.pokemon.PokemonClient;
 import com.gocity.graphql.pokemon.mock.PokemonServiceFindMock;
 import com.gocity.graphql.util.MockGrpcServer;
 import com.gocity.graphql.util.ResourceLoader;
 import io.grpc.testing.GrpcCleanupRule;
-import org.apache.commons.io.FileUtils;
 import org.junit.Rule;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Named;
@@ -19,8 +19,6 @@ import org.springframework.graphql.test.tester.GraphQlTester;
 import org.springframework.stereotype.Service;
 import org.springframework.test.context.ActiveProfiles;
 
-import java.io.File;
-import java.nio.charset.StandardCharsets;
 import java.util.stream.Stream;
 
 @ActiveProfiles("test")
@@ -51,20 +49,17 @@ class PokemonIntegrationTest {
         var responses = ResourceLoader.resourceMap("classpath:integration/pokemon/*.json");
 
         return queries.entrySet().stream()
-            .map(e -> Arguments.of(Named.of(e.getValue().getName(), e.getValue()), responses.get(e.getKey())));
+            .map(e -> Arguments.of(Named.of(e.getKey(), e.getValue()), responses.get(e.getKey())));
     }
 
     @MethodSource("pokemonResponseProvider")
     @ParameterizedTest(name = "should return the correct response values for {0} query")
-    void shouldReturnCorrectPokemonResponse(File query, File response) throws Exception {
-        var document = FileUtils.readFileToString(query, StandardCharsets.UTF_8);
-        var expected = FileUtils.readFileToString(response, StandardCharsets.UTF_8);
+    void shouldReturnCorrectPokemonResponse(String query, String response) throws Exception {
+        server.addService(new PokemonServiceFindMock(response));
 
-        server.addService(new PokemonServiceFindMock(expected));
-
-        tester.document(document)
+        tester.document(query)
             .execute()
             .path("pokemon")
-            .matchesJson(expected);
+            .matchesJson(response);
     }
 }
