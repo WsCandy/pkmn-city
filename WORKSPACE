@@ -28,9 +28,7 @@ load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 
 protobuf_deps()
 
-SPRING_VERSION = "6.0.2"
-
-SPRING_BOOT_VERSION = "2.7.6"
+SPRING_BOOT_VERSION = "3.0.0"
 
 GRPC_VERSION = "1.5.1"
 
@@ -42,13 +40,10 @@ maven_install(
         "com.google.protobuf:protobuf-java-util:3.21.11",
         "commons-io:commons-io:2.11.0",
         "com.graphql-java:graphql-java:20.0",
-        "org.projectlombok:lombok:1.18.24",
+        "org.projectlombok:lombok:1.18.24",g
         "org.springframework.graphql:spring-graphql:1.1.0",
         "net.javacrumbs.future-converter:future-converter-java8-guava:1.2.0",
         "org.slf4j:slf4j-api:%s" % SL4J_VERSION,
-        "org.springframework:spring-core:%s" % SPRING_VERSION,
-        "org.springframework:spring-beans:%s" % SPRING_VERSION,
-        "org.springframework:spring-context:%s" % SPRING_VERSION,
         "org.springframework.boot:spring-boot:%s" % SPRING_BOOT_VERSION,
         "org.springframework.boot:spring-boot-autoconfigure:%s" % SPRING_BOOT_VERSION,
         "org.springframework.boot:spring-boot-starter-web:%s" % SPRING_BOOT_VERSION,

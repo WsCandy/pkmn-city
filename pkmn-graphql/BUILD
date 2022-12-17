@@ -24,6 +24,9 @@ java_library(
     name = "deps",
     srcs = glob(["src/main/java/**/*.java"]),
     resources = glob(["src/main/resources/**/*"]),
+    runtime_deps = [
+        "@io_grpc_grpc_java//netty",
+    ],
     deps = [
         ":lombok",
         "@io_grpc_grpc_java//api",
@@ -31,7 +34,6 @@ java_library(
         "@io_grpc_grpc_java//stub",
         "@maven//:com_google_code_gson_gson",
         "@maven//:com_graphql_java_graphql_java",
-        "@maven//:commons_io_commons_io",
         "@maven//:net_javacrumbs_future_converter_future_converter_java8_guava",
         "@maven//:org_slf4j_slf4j_api",
         "@maven//:org_springframework_boot_spring_boot",

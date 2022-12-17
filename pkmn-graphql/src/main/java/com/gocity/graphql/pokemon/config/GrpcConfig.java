@@ -5,7 +5,6 @@ import io.grpc.Channel;
 import io.grpc.Grpc;
 import io.grpc.InsecureChannelCredentials;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,8 +24,8 @@ public class GrpcConfig {
     @SuppressWarnings("unchecked")
     private static Map<String, ?> getConfig(Resource resource) {
         try {
-            var file = resource.getFile();
-            var string = FileUtils.readFileToString(file, StandardCharsets.UTF_8);
+            var stream = resource.getInputStream();
+            var string = new String(stream.readAllBytes(), StandardCharsets.UTF_8);
 
             return new Gson()
                 .fromJson(string, Map.class);
@@ -40,7 +39,7 @@ public class GrpcConfig {
     Channel pokemonChannel() {
         var config = GrpcConfig.getConfig(resource);
 
-        log.debug("{}", config);
+        log.debug("GRPC Config: {}", config);
 
         return Grpc.newChannelBuilder("localhost:8081", InsecureChannelCredentials.create())
             .defaultServiceConfig(config)
