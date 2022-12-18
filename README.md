@@ -1,4 +1,4 @@
-# pkmn-city
+# pkmn-city (WIP)
 This repository is designed to be a proof of concept for a production ready mono-repo structured in micro services that can handle multiple cross-language builds and communication.
 
 It currently features Spring Boot 3.0, MongoDB 6.0, Spring GraphQL and gRPC for inter-service communication.
