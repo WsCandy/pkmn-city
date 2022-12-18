@@ -1,5 +1,15 @@
 workspace(name = "pkmn-city")
 
+SPRING_BOOT_VERSION = "3.0.0"
+
+GRPC_VERSION = "1.5.1"
+
+SL4J_VERSION = "1.7.0"
+
+JUNIT_JUPITER_VERSION = "5.9.1"
+
+JUNIT_PLATFORM_VERSION = "1.9.1"
+
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
@@ -23,6 +33,13 @@ http_archive(
     url = "https://github.com/bazel-contrib/rules_jvm/archive/refs/tags/v0.9.0.tar.gz",
 )
 
+http_archive(
+    name = "contrib_rules_jvm",
+    sha256 = "548f0583192ff79c317789b03b882a7be9b1325eb5d3da5d7fdcc4b7ca69d543",
+    strip_prefix = "rules_jvm-0.9.0",
+    url = "https://github.com/bazel-contrib/rules_jvm/archive/refs/tags/v0.9.0.tar.gz",
+)
+
 load("@rules_jvm_external//:defs.bzl", "maven_install")
 load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS")
 load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS")
@@ -34,16 +51,6 @@ load("@com_google_protobuf//:protobuf_deps.bzl", "PROTOBUF_MAVEN_ARTIFACTS")
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 
 protobuf_deps()
-
-SPRING_BOOT_VERSION = "3.0.0"
-
-GRPC_VERSION = "1.5.1"
-
-SL4J_VERSION = "1.7.0"
-
-JUNIT_JUPITER_VERSION = "5.9.1"
-
-JUNIT_PLATFORM_VERSION = "1.9.1"
 
 # Java Dependencies
 maven_install(
@@ -82,17 +89,6 @@ maven_install(
 load("@maven//:compat.bzl", "compat_repositories")
 
 compat_repositories()
-
-CONTRIB_RULES_JVM_VERSION = "0.9.0"
-
-CONTRIB_RULES_JVM_SHA = "548f0583192ff79c317789b03b882a7be9b1325eb5d3da5d7fdcc4b7ca69d543"
-
-http_archive(
-    name = "contrib_rules_jvm",
-    sha256 = CONTRIB_RULES_JVM_SHA,
-    strip_prefix = "rules_jvm-%s" % CONTRIB_RULES_JVM_VERSION,
-    url = "https://github.com/bazel-contrib/rules_jvm/archive/refs/tags/v%s.tar.gz" % CONTRIB_RULES_JVM_VERSION,
-)
 
 load("@contrib_rules_jvm//:repositories.bzl", "contrib_rules_jvm_deps")
 
