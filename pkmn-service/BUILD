@@ -35,7 +35,6 @@ java_library(
         "@maven//:com_fasterxml_jackson_core_jackson_databind",
         "@maven//:com_google_code_gson_gson",
         "@maven//:com_graphql_java_graphql_java",
-        "@maven//:commons_io_commons_io",
         "@maven//:org_slf4j_slf4j_api",
         "@maven//:org_springframework_boot_spring_boot",
         "@maven//:org_springframework_boot_spring_boot_autoconfigure",
