@@ -25,7 +25,7 @@ public class PokemonClient {
         this.setStub(channel);
     }
 
-    protected void setStub(Channel channel) {
+    public void setStub(Channel channel) {
         this.stub = PokemonServiceGrpc.newFutureStub(channel);
     }
 

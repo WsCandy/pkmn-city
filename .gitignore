@@ -1,6 +1,6 @@
 HELP.md
 .gradle
-build/
+pkmn-graphql/src/main/java/com/gocity/graphql/BUILD/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
@@ -38,3 +38,7 @@ out/
 
 ### MacOS
 .DS_Store
+
+### Bazel
+bazel-*
+.ijwb
