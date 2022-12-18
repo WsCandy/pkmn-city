@@ -21,42 +21,6 @@ java_binary(
     runtime_deps = [":deps"],
 )
 
-java_test_suite(
-    name = "tests",
-    srcs = glob(["src/test/java/**/*.java"]),
-    runner = "junit5",
-    test_suffixes = ["Test.java"],
-    runtime_deps = JUNIT5_DEPS,
-    deps = [
-        ":deps",
-        ":test-resources",
-        "@io_grpc_grpc_java//api",
-        "@io_grpc_grpc_java//core:inprocess",
-        "@io_grpc_grpc_java//core:util",
-        "@io_grpc_grpc_java//stub",
-        "@io_grpc_grpc_java//testing",
-        "@maven//:com_google_protobuf_protobuf_java_util",
-        "@maven//:org_springframework_boot_spring_boot_starter_test",
-        "@maven//:org_springframework_boot_spring_boot_test_autoconfigure",
-        "@maven//:org_springframework_graphql_spring_graphql_test",
-        "@maven//:org_springframework_spring_beans",
-        "@maven//:org_springframework_spring_context",
-        "@maven//:org_springframework_spring_core",
-        "@maven//:org_springframework_spring_test",
-        "@pkmn-city//proto:pokemon_java_grpc",
-        "@pkmn-city//proto:pokemon_proto_java",
-        artifact("org.junit.jupiter:junit-jupiter-api"),
-        artifact("org.junit.jupiter:junit-jupiter-params"),
-    ],
-)
-
-java_library(
-    name = "test-resources",
-    resources = glob([
-        "src/test/resources/**/*",
-    ]),
-)
-
 java_library(
     name = "deps",
     srcs = glob([
@@ -87,5 +51,41 @@ java_library(
         "@maven//:org_springframework_spring_core",
         "@pkmn-city//proto:pokemon_java_grpc",
         "@pkmn-city//proto:pokemon_proto_java",
+    ],
+)
+
+java_library(
+    name = "test-resources",
+    resources = glob([
+        "src/test/resources/**/*",
+    ]),
+)
+
+java_test_suite(
+    name = "tests",
+    srcs = glob(["src/test/java/**/*.java"]),
+    runner = "junit5",
+    test_suffixes = ["Test.java"],
+    runtime_deps = JUNIT5_DEPS,
+    deps = [
+        ":deps",
+        ":test-resources",
+        "@io_grpc_grpc_java//api",
+        "@io_grpc_grpc_java//core:inprocess",
+        "@io_grpc_grpc_java//core:util",
+        "@io_grpc_grpc_java//stub",
+        "@io_grpc_grpc_java//testing",
+        "@maven//:com_google_protobuf_protobuf_java_util",
+        "@maven//:org_springframework_boot_spring_boot_starter_test",
+        "@maven//:org_springframework_boot_spring_boot_test_autoconfigure",
+        "@maven//:org_springframework_graphql_spring_graphql_test",
+        "@maven//:org_springframework_spring_beans",
+        "@maven//:org_springframework_spring_context",
+        "@maven//:org_springframework_spring_core",
+        "@maven//:org_springframework_spring_test",
+        "@pkmn-city//proto:pokemon_java_grpc",
+        "@pkmn-city//proto:pokemon_proto_java",
+        artifact("org.junit.jupiter:junit-jupiter-api"),
+        artifact("org.junit.jupiter:junit-jupiter-params"),
     ],
 )
