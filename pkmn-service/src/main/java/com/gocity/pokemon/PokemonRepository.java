@@ -1,69 +1,66 @@
 package com.gocity.pokemon;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import common.proto.pokemon.Pokemon;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.Resource;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.List;
 import java.util.Optional;
-import java.util.Random;
 
+@Slf4j
 @Component
 public class PokemonRepository {
 
-    private final List<PokemonDAO> pkmn;
+    private final MongoTemplate template;
 
-    PokemonRepository(@Value("classpath:data/pokemon.json") Resource data) throws IOException {
-        var mapper = new ObjectMapper();
-        var stream = data.getInputStream();
-        var test = new String(stream.readAllBytes(), StandardCharsets.UTF_8);
-
-        pkmn = mapper.readValue(test, mapper.getTypeFactory().constructCollectionType(List.class, PokemonDAO.class));
+    PokemonRepository(MongoTemplate template) {
+        this.template = template;
     }
 
-    public Optional<PokemonDAO> findBy(Pokemon.PokemonRequest request) {
-        if (request.hasId() && request.hasName()) {
-            return findBy(request.getName(), request.getId());
-        }
-
-        if (!request.hasName() && request.hasId()) {
-            return findBy(request.getId());
-        }
-
-        if (request.hasName()) {
-            return findBy(request.getName());
-        }
-
-        return findRandom();
+    private Optional<PokemonDAO> find(Query query) {
+        return Optional.ofNullable(
+            template.findOne(query, PokemonDAO.class)
+        );
     }
 
     private Optional<PokemonDAO> findRandom() {
-        var r = new Random();
+        var aggregation = Aggregation.newAggregation(
+            Aggregation.sample(1L)
+        );
 
-        return pkmn.stream()
-            .skip(r.nextInt(pkmn.size()))
-            .findAny();
+        var result = template.aggregate(aggregation, "pokemon", PokemonDAO.class);
+
+        return Optional.ofNullable(
+            result.getUniqueMappedResult()
+        );
     }
 
-    private Optional<PokemonDAO> findBy(int id) {
-        return pkmn.stream()
-            .filter(pokemon -> pokemon.getId() == id)
-            .findFirst();
+    public Optional<PokemonDAO> findBy(Pokemon.PokemonRequest request) {
+        var query = constructFindQuery(request);
+        log.debug("Constructed Query: {}", query);
+
+        return query.map(this::find)
+            .orElse(findRandom());
     }
 
-    private Optional<PokemonDAO> findBy(String name) {
-        return pkmn.stream()
-            .filter(pokemon -> name.equals(pokemon.getName()))
-            .findFirst();
-    }
+    private Optional<Query> constructFindQuery(Pokemon.PokemonRequest request) {
+        var query = new Query();
 
-    private Optional<PokemonDAO> findBy(String name, int id) {
-        return pkmn.stream()
-            .filter(pokemon -> name.equals(pokemon.getName()) && pokemon.getId() == id)
-            .findFirst();
+        if (!request.hasName() && !request.hasId()) {
+            return Optional.empty();
+        }
+
+        if (request.hasName()) {
+            query.addCriteria(Criteria.where("name").is(request.getName()));
+        }
+
+        if (request.hasId()) {
+            query.addCriteria(Criteria.where("_id").is(request.getId()));
+        }
+
+        return Optional.of(query);
     }
 }

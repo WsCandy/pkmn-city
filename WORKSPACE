@@ -61,6 +61,7 @@ maven_install(
         "org.springframework.boot:spring-boot-starter-web:%s" % SPRING_BOOT_VERSION,
         "org.springframework.boot:spring-boot-starter:%s" % SPRING_BOOT_VERSION,
         "org.springframework.boot:spring-boot-starter-graphql:%s" % SPRING_BOOT_VERSION,
+        "org.springframework.boot:spring-boot-starter-data-mongodb:%s" % SPRING_BOOT_VERSION,
         "org.springframework.boot:spring-boot-starter-test:%s" % SPRING_BOOT_VERSION,
         "org.springframework.graphql:spring-graphql-test:1.1.0",
         "org.hamcrest:hamcrest:2.2",
