@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: "pkmn-graphql"
+  graphql:
+    graphiql:
+      enabled: false

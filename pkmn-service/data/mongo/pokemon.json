@@ -1,906 +1,906 @@
 [
     {
-        "id": 1,
+        "_id": 1,
         "name": "Bulbasaur",
         "species": "Seed Pokémon",
         "description": "A strange seed was planted on its back at birth. The plant sprouts and grows with this POKéMON."
     },
     {
-        "id": 2,
+        "_id": 2,
         "name": "Ivysaur",
         "species": "Seed Pokémon",
         "description": "When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs."
     },
     {
-        "id": 3,
+        "_id": 3,
         "name": "Venusaur",
         "species": "Seed Pokémon",
         "description": "The plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight."
     },
     {
-        "id": 4,
+        "_id": 4,
         "name": "Charmander",
         "species": "Lizard Pokémon",
         "description": "Obviously prefers hot places. When it rains, steam is said to spout from the tip of its tail."
     },
     {
-        "id": 5,
+        "_id": 5,
         "name": "Charmeleon",
         "species": "Flame Pokémon",
         "description": "When it swings its burning tail, it elevates the temperature to unbearably high levels."
     },
     {
-        "id": 6,
+        "_id": 6,
         "name": "Charizard",
         "species": "Flame Pokémon",
         "description": "Spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally."
     },
     {
-        "id": 7,
+        "_id": 7,
         "name": "Squirtle",
         "species": "Tiny Turtle Pokémon",
         "description": "After birth, its back swells and hardens into a shell. Powerfully sprays foam from its mouth."
     },
     {
-        "id": 8,
+        "_id": 8,
         "name": "Wartortle",
         "species": "Turtle Pokémon",
         "description": "Often hides in water to stalk unwary prey. For swimming fast, it moves its ears to maintain balance."
     },
     {
-        "id": 9,
+        "_id": 9,
         "name": "Blastoise",
         "species": "Shellfish Pokémon",
         "description": "A brutal POKéMON with pressurized water jets on its shell. They are used for high speed tackles."
     },
     {
-        "id": 10,
+        "_id": 10,
         "name": "Caterpie",
         "species": "Worm Pokémon",
         "description": "Its short feet are tipped with suction pads that enable it to tirelessly climb slopes and walls."
     },
     {
-        "id": 11,
+        "_id": 11,
         "name": "Metapod",
         "species": "Cocoon Pokémon",
         "description": "This POKéMON is vulnerable to attack while its shell is soft, exposing its weak and tender body."
     },
     {
-        "id": 12,
+        "_id": 12,
         "name": "Butterfree",
         "species": "Butterfly Pokémon",
         "description": "In battle, it flaps its wings at high speed to release highly toxic dust into the air."
     },
     {
-        "id": 13,
+        "_id": 13,
         "name": "Weedle",
         "species": "Hairy Bug Pokémon",
         "description": "Often found in forests, eating leaves. It has a sharp venomous stinger on its head."
     },
     {
-        "id": 14,
+        "_id": 14,
         "name": "Kakuna",
         "species": "Cocoon Pokémon",
         "description": "Almost incapable of moving, this POKéMON can only harden its shell to protect itself from predators."
     },
     {
-        "id": 15,
+        "_id": 15,
         "name": "Beedrill",
         "species": "Poison Bee Pokémon",
         "description": "Flies at high speed and attacks using its large venomous stingers on its forelegs and tail."
     },
     {
-        "id": 16,
+        "_id": 16,
         "name": "Pidgey",
         "species": "Tiny Bird Pokémon",
         "description": "A common sight in forests and woods. It flaps its wings at ground level to kick up blinding sand."
     },
     {
-        "id": 17,
+        "_id": 17,
         "name": "Pidgeotto",
         "species": "Bird Pokémon",
         "description": "Very protective of its sprawling territorial area, this POKéMON will fiercely peck at any intruder."
     },
     {
-        "id": 18,
+        "_id": 18,
         "name": "Pidgeot",
         "species": "Bird Pokémon",
         "description": "When hunting, it skims the surface of water at high speed to pick off unwary prey such as MAGIKARP."
     },
     {
-        "id": 19,
+        "_id": 19,
         "name": "Rattata",
         "species": "Mouse Pokémon",
         "description": "Bites anything when it attacks. Small and very quick, it is a common sight in many places."
     },
     {
-        "id": 20,
+        "_id": 20,
         "name": "Raticate",
         "species": "Mouse Pokémon",
         "description": "It uses its whiskers to maintain its balance. It apparently slows down if they are cut off."
     },
     {
-        "id": 21,
+        "_id": 21,
         "name": "Spearow",
         "species": "Tiny Bird Pokémon",
         "description": "Eats bugs in grassy areas. It has to flap its short wings at high speed to stay airborne."
     },
     {
-        "id": 22,
+        "_id": 22,
         "name": "Fearow",
         "species": "Beak Pokémon",
         "description": "With its huge and magnificent wings, it can keep aloft without ever having to land for rest."
     },
     {
-        "id": 23,
+        "_id": 23,
         "name": "Ekans",
         "species": "Snake Pokémon",
         "description": "Moves silently and stealthily. Eats the eggs of birds, such as PIDGEY and SPEAROW, whole."
     },
     {
-        "id": 24,
+        "_id": 24,
         "name": "Arbok",
         "species": "Cobra Pokémon",
         "description": "It is rumored that the ferocious warning markings on its belly differ from area to area."
     },
     {
-        "id": 25,
+        "_id": 25,
         "name": "Pikachu",
         "species": "Mouse Pokémon",
         "description": "When several of these POKéMON gather, their electricity could build and cause lightning storms."
     },
     {
-        "id": 26,
+        "_id": 26,
         "name": "Raichu",
         "species": "Mouse Pokémon",
         "description": "Its long tail serves as a ground to protect itself from its own high voltage power."
     },
     {
-        "id": 27,
+        "_id": 27,
         "name": "Sandshrew",
         "species": "Mouse Pokémon",
         "description": "Burrows deep underground in arid locations far from water. It only emerges to hunt for food."
     },
     {
-        "id": 28,
+        "_id": 28,
         "name": "Sandslash",
         "species": "Mouse Pokémon",
         "description": "Curls up into a spiny ball when threatened. It can roll while curled up to attack or escape."
     },
     {
-        "id": 29,
+        "_id": 29,
         "name": "Nidoran♀ (female)",
         "species": "Poison Pin Pokémon",
         "description": "Although small, its venomous barbs render this POKéMON dangerous. The female has smaller horns."
     },
     {
-        "id": 30,
+        "_id": 30,
         "name": "Nidorina",
         "species": "Poison Pin Pokémon",
         "description": "The female’s horn develops slowly. Prefers physical attacks such as clawing and biting."
     },
     {
-        "id": 31,
+        "_id": 31,
         "name": "Nidoqueen",
         "species": "Drill Pokémon",
         "description": "Its hard scales provide strong protection. It uses its hefty bulk to execute powerful moves."
     },
     {
-        "id": 32,
+        "_id": 32,
         "name": "Nidoran♂ (male)",
         "species": "Poison Pin Pokémon",
         "description": "Stiffens its ears to sense danger. The larger its horns, the more powerful its secreted venom."
     },
     {
-        "id": 33,
+        "_id": 33,
         "name": "Nidorino",
         "species": "Poison Pin Pokémon",
         "description": "An aggressive POKéMON that is quick to attack. The horn on its head secretes a powerful venom."
     },
     {
-        "id": 34,
+        "_id": 34,
         "name": "Nidoking",
         "species": "Drill Pokémon",
         "description": "It uses its powerful tail in battle to smash, constrict, then break the prey’s bones."
     },
     {
-        "id": 35,
+        "_id": 35,
         "name": "Clefairy",
         "species": "Fairy Pokémon",
         "description": "Its magical and cute appeal has many admirers. It is rare and found only in certain areas."
     },
     {
-        "id": 36,
+        "_id": 36,
         "name": "Clefable",
         "species": "Fairy Pokémon",
         "description": "A timid fairy POKéMON that is rarely seen. It will run and hide the moment it senses people."
     },
     {
-        "id": 37,
+        "_id": 37,
         "name": "Vulpix",
         "species": "Fox Pokémon",
         "description": "At the time of birth, it has just one tail. The tail splits from its tip as it grows older."
     },
     {
-        "id": 38,
+        "_id": 38,
         "name": "Ninetales",
         "species": "Fox Pokémon",
         "description": "Very smart and very vengeful. Grabbing one of its many tails could result in a 1000-year curse."
     },
     {
-        "id": 39,
+        "_id": 39,
         "name": "Jigglypuff",
         "species": "Balloon Pokémon",
         "description": "When its huge eyes light up, it sings a mysteriously soothing melody that lulls its enemies to sleep."
     },
     {
-        "id": 40,
+        "_id": 40,
         "name": "Wigglytuff",
         "species": "Balloon Pokémon",
         "description": "The body is soft and rubbery. When angered, it will suck in air and inflate itself to an enormous size."
     },
     {
-        "id": 41,
+        "_id": 41,
         "name": "Zubat",
         "species": "Bat Pokémon",
         "description": "Forms colonies in perpetually dark places. Uses ultrasonic waves to identify and approach targets."
     },
     {
-        "id": 42,
+        "_id": 42,
         "name": "Golbat",
         "species": "Bat Pokémon",
         "description": "Once it strikes, it will not stop draining energy from the victim even if it gets too heavy to fly."
     },
     {
-        "id": 43,
+        "_id": 43,
         "name": "Oddish",
         "species": "Weed Pokémon",
         "description": "During the day, it keeps its face buried in the ground. At night, it wanders around sowing its seeds."
     },
     {
-        "id": 44,
+        "_id": 44,
         "name": "Gloom",
         "species": "Weed Pokémon",
         "description": "The fluid that oozes from its mouth isn’t drool. It is a nectar that is used to attract prey."
     },
     {
-        "id": 45,
+        "_id": 45,
         "name": "Vileplume",
         "species": "Flower Pokémon",
         "description": "The larger its petals, the more toxic pollen it contains. Its big head is heavy and hard to hold up."
     },
     {
-        "id": 46,
+        "_id": 46,
         "name": "Paras",
         "species": "Mushroom Pokémon",
         "description": "Burrows to suck tree roots. The mushrooms on its back grow by drawing nutrients from the bug host."
     },
     {
-        "id": 47,
+        "_id": 47,
         "name": "Parasect",
         "species": "Mushroom Pokémon",
         "description": "A host-parasite pair in which the parasite mushroom has taken over the host bug. Prefers damp places."
     },
     {
-        "id": 48,
+        "_id": 48,
         "name": "Venonat",
         "species": "Insect Pokémon",
         "description": "Lives in the shadows of tall trees where it eats insects. It is attracted by light at night."
     },
     {
-        "id": 49,
+        "_id": 49,
         "name": "Venomoth",
         "species": "Poison Moth Pokémon",
         "description": "The dust-like scales covering its wings are color coded to indicate the kinds of poison it has."
     },
     {
-        "id": 50,
+        "_id": 50,
         "name": "Diglett",
         "species": "Mole Pokémon",
         "description": "Lives about one yard underground where it feeds on plant roots. It sometimes appears above ground."
     },
     {
-        "id": 51,
+        "_id": 51,
         "name": "Dugtrio",
         "species": "Mole Pokémon",
         "description": "A team of DIGLETT triplets. It triggers huge earthquakes by burrowing 60 miles underground."
     },
     {
-        "id": 52,
+        "_id": 52,
         "name": "Meowth",
         "species": "Scratch Cat Pokémon",
         "description": "Adores circular objects. Wanders the streets on a nightly basis to look for dropped loose change."
     },
     {
-        "id": 53,
+        "_id": 53,
         "name": "Persian",
         "species": "Classy Cat Pokémon",
         "description": "Although its fur has many admirers, it is tough to raise as a pet because of its fickle meanness."
     },
     {
-        "id": 54,
+        "_id": 54,
         "name": "Psyduck",
         "species": "Duck Pokémon",
         "description": "While lulling its enemies with its vacant look, this wily POKéMON will use psychokinetic powers."
     },
     {
-        "id": 55,
+        "_id": 55,
         "name": "Golduck",
         "species": "Duck Pokémon",
         "description": "Often seen swimming elegantly by lake shores. It is often mistaken for the Japanese monster, Kappa."
     },
     {
-        "id": 56,
+        "_id": 56,
         "name": "Mankey",
         "species": "Pig Monkey Pokémon",
         "description": "Extremely quick to anger. It could be docile one moment then thrashing away the next instant."
     },
     {
-        "id": 57,
+        "_id": 57,
         "name": "Primeape",
         "species": "Pig Monkey Pokémon",
         "description": "Always furious and tenacious to boot. It will not abandon chasing its quarry until it is caught."
     },
     {
-        "id": 58,
+        "_id": 58,
         "name": "Growlithe",
         "species": "Puppy Pokémon",
         "description": "Very protective of its territory. It will bark and bite to repel intruders from its space."
     },
     {
-        "id": 59,
+        "_id": 59,
         "name": "Arcanine",
         "species": "Legendary Pokémon",
         "description": "A POKéMON that has been admired since the past for its beauty. It runs agilely as if on wings."
     },
     {
-        "id": 60,
+        "_id": 60,
         "name": "Poliwag",
         "species": "Tadpole Pokémon",
         "description": "Its newly grown legs prevent it from running. It appears to prefer swimming than trying to stand."
     },
     {
-        "id": 61,
+        "_id": 61,
         "name": "Poliwhirl",
         "species": "Tadpole Pokémon",
         "description": "Capable of living in or out of water. When out of water, it sweats to keep its body slimy."
     },
     {
-        "id": 62,
+        "_id": 62,
         "name": "Poliwrath",
         "species": "Tadpole Pokémon",
         "description": "An adept swimmer at both the front crawl and breast stroke. Easily overtakes the best human swimmers."
     },
     {
-        "id": 63,
+        "_id": 63,
         "name": "Abra",
         "species": "Psi Pokémon",
         "description": "Using its ability to read minds, it will identify impending danger and TELEPORT to safety."
     },
     {
-        "id": 64,
+        "_id": 64,
         "name": "Kadabra",
         "species": "Psi Pokémon",
         "description": "It emits special alpha waves from its body that induce headaches just by being close by."
     },
     {
-        "id": 65,
+        "_id": 65,
         "name": "Alakazam",
         "species": "Psi Pokémon",
         "description": "Its brain can outperform a supercomputer. Its intelligence quotient is said to be 5,000."
     },
     {
-        "id": 66,
+        "_id": 66,
         "name": "Machop",
         "species": "Superpower Pokémon",
         "description": "Loves to build its muscles. It trains in all styles of martial arts to become even stronger."
     },
     {
-        "id": 67,
+        "_id": 67,
         "name": "Machoke",
         "species": "Superpower Pokémon",
         "description": "Its muscular body is so powerful, it must wear a power save belt to be able to regulate its motions."
     },
     {
-        "id": 68,
+        "_id": 68,
         "name": "Machamp",
         "species": "Superpower Pokémon",
         "description": "Using its heavy muscles, it throws powerful punches that can send the victim clear over the horizon."
     },
     {
-        "id": 69,
+        "_id": 69,
         "name": "Bellsprout",
         "species": "Flower Pokémon",
         "description": "A carnivorous POKéMON that traps and eats bugs. It uses its root feet to soak up needed moisture."
     },
     {
-        "id": 70,
+        "_id": 70,
         "name": "Weepinbell",
         "species": "Flycatcher Pokémon",
         "description": "It spits out POISONPOWDER to immobilize the enemy and then finishes it with a spray of ACID."
     },
     {
-        "id": 71,
+        "_id": 71,
         "name": "Victreebel",
         "species": "Flycatcher Pokémon",
         "description": "Said to live in huge colonies deep in jungles, although no one has ever returned from there."
     },
     {
-        "id": 72,
+        "_id": 72,
         "name": "Tentacool",
         "species": "Jellyfish Pokémon",
         "description": "Drifts in shallow seas. Anglers who hook them by accident are often punished by its stinging acid."
     },
     {
-        "id": 73,
+        "_id": 73,
         "name": "Tentacruel",
         "species": "Jellyfish Pokémon",
         "description": "The tentacles are normally kept short. On hunts, they are extended to ensnare and immobilize prey."
     },
     {
-        "id": 74,
+        "_id": 74,
         "name": "Geodude",
         "species": "Rock Pokémon",
         "description": "Found in fields and mountains. Mistaking them for boulders, people often step or trip on them."
     },
     {
-        "id": 75,
+        "_id": 75,
         "name": "Graveler",
         "species": "Rock Pokémon",
         "description": "Rolls down slopes to move. It rolls over any obstacle without slowing or changing its direction."
     },
     {
-        "id": 76,
+        "_id": 76,
         "name": "Golem",
         "species": "Megaton Pokémon",
         "description": "Its boulder-like body is extremely hard. It can easily withstand dynamite blasts without damage."
     },
     {
-        "id": 77,
+        "_id": 77,
         "name": "Ponyta",
         "species": "Fire Horse Pokémon",
         "description": "Its hooves are 10 times harder than diamonds. It can trample anything completely flat in little time."
     },
     {
-        "id": 78,
+        "_id": 78,
         "name": "Rapidash",
         "species": "Fire Horse Pokémon",
         "description": "Very competitive, this POKéMON will chase anything that moves fast in the hopes of racing it."
     },
     {
-        "id": 79,
+        "_id": 79,
         "name": "Slowpoke",
         "species": "Dopey Pokémon",
         "description": "Incredibly slow and dopey. It takes 5 seconds for it to feel pain when under attack."
     },
     {
-        "id": 80,
+        "_id": 80,
         "name": "Slowbro",
         "species": "Hermit Crab Pokémon",
         "description": "The SHELLDER that is latched onto SLOWPOKE’s tail is said to feed on the host’s left over scraps."
     },
     {
-        "id": 81,
+        "_id": 81,
         "name": "Magnemite",
         "species": "Magnet Pokémon",
         "description": "Uses anti-gravity to stay suspended. Appears without warning and uses THUNDER WAVE and similar moves."
     },
     {
-        "id": 82,
+        "_id": 82,
         "name": "Magneton",
         "species": "Magnet Pokémon",
         "description": "Formed by several MAGNEMITEs linked together. They frequently appear when sunspots flare up."
     },
     {
-        "id": 83,
+        "_id": 83,
         "name": "Farfetch'd",
         "species": "Wild Duck Pokémon",
         "description": "The sprig of green onions it holds is its weapon. It is used much like a metal sword."
     },
     {
-        "id": 84,
+        "_id": 84,
         "name": "Doduo",
         "species": "Twin Bird Pokémon",
         "description": "A bird that makes up for its poor flying with its fast foot speed. Leaves giant footprints."
     },
     {
-        "id": 85,
+        "_id": 85,
         "name": "Dodrio",
         "species": "Triple Bird Pokémon",
         "description": "Uses its three brains to execute complex plans. While two heads sleep, one head stays awake."
     },
     {
-        "id": 86,
+        "_id": 86,
         "name": "Seel",
         "species": "Sea Lion Pokémon",
         "description": "The protruding horn on its head is very hard. It is used for bashing through thick ice."
     },
     {
-        "id": 87,
+        "_id": 87,
         "name": "Dewgong",
         "species": "Sea Lion Pokémon",
         "description": "Stores thermal energy in its body. Swims at a steady 8 knots even in intensely cold waters."
     },
     {
-        "id": 88,
+        "_id": 88,
         "name": "Grimer",
         "species": "Sludge Pokémon",
         "description": "Appears in filthy areas. Thrives by sucking up polluted sludge that is pumped out of factories."
     },
     {
-        "id": 89,
+        "_id": 89,
         "name": "Muk",
         "species": "Sludge Pokémon",
         "description": "Thickly covered with a filthy, vile sludge. It is so toxic, even its footprints contain poison."
     },
     {
-        "id": 90,
+        "_id": 90,
         "name": "Shellder",
         "species": "Bivalve Pokémon",
         "description": "Its hard shell repels any kind of attack. It is vulnerable only when its shell is open."
     },
     {
-        "id": 91,
+        "_id": 91,
         "name": "Cloyster",
         "species": "Bivalve Pokémon",
         "description": "When attacked, it launches its horns in quick volleys. Its innards have never been seen."
     },
     {
-        "id": 92,
+        "_id": 92,
         "name": "Gastly",
         "species": "Gas Pokémon",
         "description": "Almost invisible, this gaseous POKéMON cloaks the target and puts it to sleep without notice."
     },
     {
-        "id": 93,
+        "_id": 93,
         "name": "Haunter",
         "species": "Gas Pokémon",
         "description": "Because of its ability to slip through block walls, it is said to be from another dimension."
     },
     {
-        "id": 94,
+        "_id": 94,
         "name": "Gengar",
         "species": "Shadow Pokémon",
         "description": "Under a full moon, this POKéMON likes to mimic the shadows of people and laugh at their fright."
     },
     {
-        "id": 95,
+        "_id": 95,
         "name": "Onix",
         "species": "Rock Snake Pokémon",
         "description": "As it grows, the stone portions of its body harden to become similar to a diamond, but colored black."
     },
     {
-        "id": 96,
+        "_id": 96,
         "name": "Drowzee",
         "species": "Hypnosis Pokémon",
         "description": "Puts enemies to sleep then eats their dreams. Occasionally gets sick from eating bad dreams."
     },
     {
-        "id": 97,
+        "_id": 97,
         "name": "Hypno",
         "species": "Hypnosis Pokémon",
         "description": "When it locks eyes with an enemy, it will use a mix of PSI moves such as HYPNOSIS and CONFUSION."
     },
     {
-        "id": 98,
+        "_id": 98,
         "name": "Krabby",
         "species": "River Crab Pokémon",
         "description": "Its pincers are not only powerful weapons, they are used for balance when walking sideways."
     },
     {
-        "id": 99,
+        "_id": 99,
         "name": "Kingler",
         "species": "Pincer Pokémon",
         "description": "The large pincer has 10000 hp of crushing power. However, its huge size makes it unwieldy to use."
     },
     {
-        "id": 100,
+        "_id": 100,
         "name": "Voltorb",
         "species": "Ball Pokémon",
         "description": "Usually found in power plants. Easily mistaken for a POKé BALL, they have zapped many people."
     },
     {
-        "id": 101,
+        "_id": 101,
         "name": "Electrode",
         "species": "Ball Pokémon",
         "description": "It stores electric energy under very high pressure. It often explodes with little or no provocation."
     },
     {
-        "id": 102,
+        "_id": 102,
         "name": "Exeggcute",
         "species": "Egg Pokémon",
         "description": "Often mistaken for eggs. When disturbed, they quickly gather and attack in swarms."
     },
     {
-        "id": 103,
+        "_id": 103,
         "name": "Exeggutor",
         "species": "Coconut Pokémon",
         "description": "Legend has it that on rare occasions, one of its heads will drop off and continue on as an EXEGGCUTE."
     },
     {
-        "id": 104,
+        "_id": 104,
         "name": "Cubone",
         "species": "Lonely Pokémon",
         "description": "Because it never removes its skull helmet, no one has ever seen this POKéMON’s real face."
     },
     {
-        "id": 105,
+        "_id": 105,
         "name": "Marowak",
         "species": "Bone Keeper Pokémon",
         "description": "The bone it holds is its key weapon. It throws the bone skillfully like a boomerang to KO targets."
     },
     {
-        "id": 106,
+        "_id": 106,
         "name": "Hitmonlee",
         "species": "Kicking Pokémon",
         "description": "When in a hurry, its legs lengthen progressively. It runs smoothly with extra long, loping strides."
     },
     {
-        "id": 107,
+        "_id": 107,
         "name": "Hitmonchan",
         "species": "Punching Pokémon",
         "description": "While apparently doing nothing, it fires punches in lightning fast volleys that are impossible to see."
     },
     {
-        "id": 108,
+        "_id": 108,
         "name": "Lickitung",
         "species": "Licking Pokémon",
         "description": "Its tongue can be extended like a chameleon’s. It leaves a tingling sensation when it licks enemies."
     },
     {
-        "id": 109,
+        "_id": 109,
         "name": "Koffing",
         "species": "Poison Gas Pokémon",
         "description": "Because it stores several kinds of toxic gases in its body, it is prone to exploding without warning."
     },
     {
-        "id": 110,
+        "_id": 110,
         "name": "Weezing",
         "species": "Poison Gas Pokémon",
         "description": "Where two kinds of poison gases meet, 2 KOFFINGs can fuse into a WEEZING over many years."
     },
     {
-        "id": 111,
+        "_id": 111,
         "name": "Rhyhorn",
         "species": "Spikes Pokémon",
         "description": "Its massive bones are 1000 times harder than human bones. It can easily knock a trailer flying."
     },
     {
-        "id": 112,
+        "_id": 112,
         "name": "Rhydon",
         "species": "Drill Pokémon",
         "description": "Protected by an armor-like hide, it is capable of living in molten lava of 3,600 degrees."
     },
     {
-        "id": 113,
+        "_id": 113,
         "name": "Chansey",
         "species": "Egg Pokémon",
         "description": "A rare and elusive POKéMON that is said to bring happiness to those who manage to get it."
     },
     {
-        "id": 114,
+        "_id": 114,
         "name": "Tangela",
         "species": "Vine Pokémon",
         "description": "The whole body is swathed with wide vines that are similar to seaweed. Its vines shake as it walks."
     },
     {
-        "id": 115,
+        "_id": 115,
         "name": "Kangaskhan",
         "species": "Parent Pokémon",
         "description": "The infant rarely ventures out of its mother’s protective pouch until it is 3 years old."
     },
     {
-        "id": 116,
+        "_id": 116,
         "name": "Horsea",
         "species": "Dragon Pokémon",
         "description": "Known to shoot down flying bugs with precision blasts of ink from the surface of the water."
     },
     {
-        "id": 117,
+        "_id": 117,
         "name": "Seadra",
         "species": "Dragon Pokémon",
         "description": "Capable of swimming backwards by rapidly flapping its wing-like pectoral fins and stout tail."
     },
     {
-        "id": 118,
+        "_id": 118,
         "name": "Goldeen",
         "species": "Goldfish Pokémon",
         "description": "Its tail fin billows like an elegant ballroom dress, giving it the nickname of the Water Queen."
     },
     {
-        "id": 119,
+        "_id": 119,
         "name": "Seaking",
         "species": "Goldfish Pokémon",
         "description": "In the autumn spawning season, they can be seen swimming powerfully up rivers and creeks."
     },
     {
-        "id": 120,
+        "_id": 120,
         "name": "Staryu",
         "species": "Star Shape Pokémon",
         "description": "An enigmatic POKéMON that can effortlessly regenerate any appendage it loses in battle."
     },
     {
-        "id": 121,
+        "_id": 121,
         "name": "Starmie",
         "species": "Mysterious Pokémon",
         "description": "Its central core glows with the seven colors of the rainbow. Some people value the core as a gem."
     },
     {
-        "id": 122,
+        "_id": 122,
         "name": "Mr. Mime",
         "species": "Barrier Pokémon",
         "description": "If interrupted while it is miming, it will slap around the offender with its broad hands."
     },
     {
-        "id": 123,
+        "_id": 123,
         "name": "Scyther",
         "species": "Mantis Pokémon",
         "description": "With ninja-like agility and speed, it can create the illusion that there is more than one."
     },
     {
-        "id": 124,
+        "_id": 124,
         "name": "Jynx",
         "species": "Human Shape Pokémon",
         "description": "It seductively wiggles its hips as it walks. It can cause people to dance in unison with it."
     },
     {
-        "id": 125,
+        "_id": 125,
         "name": "Electabuzz",
         "species": "Electric Pokémon",
         "description": "Normally found near power plants, they can wander away and cause major blackouts in cities."
     },
     {
-        "id": 126,
+        "_id": 126,
         "name": "Magmar",
         "species": "Spitfire Pokémon",
         "description": "Its body always burns with an orange glow that enables it to hide perfectly among flames."
     },
     {
-        "id": 127,
+        "_id": 127,
         "name": "Pinsir",
         "species": "Stag Beetle Pokémon",
         "description": "If it fails to crush the victim in its pincers, it will swing it around and toss it hard."
     },
     {
-        "id": 128,
+        "_id": 128,
         "name": "Tauros",
         "species": "Wild Bull Pokémon",
         "description": "When it targets an enemy, it charges furiously while whipping its body with its long tails."
     },
     {
-        "id": 129,
+        "_id": 129,
         "name": "Magikarp",
         "species": "Fish Pokémon",
         "description": "In the distant past, it was somewhat stronger than the horribly weak descendants that exist today."
     },
     {
-        "id": 130,
+        "_id": 130,
         "name": "Gyarados",
         "species": "Atrocious Pokémon",
         "description": "Rarely seen in the wild. Huge and vicious, it is capable of destroying entire cities in a rage."
     },
     {
-        "id": 131,
+        "_id": 131,
         "name": "Lapras",
         "species": "Transport Pokémon",
         "description": "A POKéMON that has been overhunted almost to extinction. It can ferry people across the water."
     },
     {
-        "id": 132,
+        "_id": 132,
         "name": "Ditto",
         "species": "Transform Pokémon",
         "description": "Capable of copying an enemy’s genetic code to instantly transform itself into a duplicate of the enemy."
     },
     {
-        "id": 133,
+        "_id": 133,
         "name": "Eevee",
         "species": "Evolution Pokémon",
         "description": "Its genetic code is irregular. It may mutate if it is exposed to radiation from element STONEs."
     },
     {
-        "id": 134,
+        "_id": 134,
         "name": "Vaporeon",
         "species": "Bubble Jet Pokémon",
         "description": "Lives close to water. Its long tail is ridged with a fin which is often mistaken for a mermaid’s."
     },
     {
-        "id": 135,
+        "_id": 135,
         "name": "Jolteon",
         "species": "Lightning Pokémon",
         "description": "It accumulates negative ions in the atmosphere to blast out 10000-volt lightning bolts."
     },
     {
-        "id": 136,
+        "_id": 136,
         "name": "Flareon",
         "species": "Flame Pokémon",
         "description": "When storing thermal energy in its body, its temperature could soar to over 1600 degrees."
     },
     {
-        "id": 137,
+        "_id": 137,
         "name": "Porygon",
         "species": "Virtual Pokémon",
         "description": "A POKéMON that consists entirely of programming code. Capable of moving freely in cyberspace."
     },
     {
-        "id": 138,
+        "_id": 138,
         "name": "Omanyte",
         "species": "Spiral Pokémon",
         "description": "Although long extinct, in rare cases, it can be genetically resurrected from fossils."
     },
     {
-        "id": 139,
+        "_id": 139,
         "name": "Omastar",
         "species": "Spiral Pokémon",
         "description": "A prehistoric POKéMON that died out when its heavy shell made it impossible to catch prey."
     },
     {
-        "id": 140,
+        "_id": 140,
         "name": "Kabuto",
         "species": "Shellfish Pokémon",
         "description": "A POKéMON that was resurrected from a fossil found in what was once the ocean floor eons ago."
     },
     {
-        "id": 141,
+        "_id": 141,
         "name": "Kabutops",
         "species": "Shellfish Pokémon",
         "description": "Its sleek shape is perfect for swimming. It slashes prey with its claws and drains the body fluids."
     },
     {
-        "id": 142,
+        "_id": 142,
         "name": "Aerodactyl",
         "species": "Fossil Pokémon",
         "description": "A ferocious, prehistoric POKéMON that goes for the enemy’s throat with its serrated saw-like fangs."
     },
     {
-        "id": 143,
+        "_id": 143,
         "name": "Snorlax",
         "species": "Sleeping Pokémon",
         "description": "Very lazy. Just eats and sleeps. As its rotund bulk builds, it becomes steadily more slothful."
     },
     {
-        "id": 144,
+        "_id": 144,
         "name": "Articuno",
         "species": "Freeze Pokémon",
         "description": "A legendary bird POKéMON that is said to appear to doomed people who are lost in icy mountains."
     },
     {
-        "id": 145,
+        "_id": 145,
         "name": "Zapdos",
         "species": "Electric Pokémon",
         "description": "A legendary bird POKéMON that is said to appear from clouds while dropping enormous lightning bolts."
     },
     {
-        "id": 146,
+        "_id": 146,
         "name": "Moltres",
         "species": "Flame Pokémon",
         "description": "Known as the legendary bird of fire. Every flap of its wings creates a dazzling flash of flames."
     },
     {
-        "id": 147,
+        "_id": 147,
         "name": "Dratini",
         "species": "Dragon Pokémon",
         "description": "Long considered a mythical POKéMON until recently when a small colony was found living underwater."
     },
     {
-        "id": 148,
+        "_id": 148,
         "name": "Dragonair",
         "species": "Dragon Pokémon",
         "description": "A mystical POKéMON that exudes a gentle aura. Has the ability to change climate conditions."
     },
     {
-        "id": 149,
+        "_id": 149,
         "name": "Dragonite",
         "species": "Dragon Pokémon",
         "description": "An extremely rarely seen marine POKéMON. Its intelligence is said to match that of humans."
     },
     {
-        "id": 150,
+        "_id": 150,
         "name": "Mewtwo",
         "species": "Genetic Pokémon",
         "description": "It was created by a scientist after years of horrific gene splicing and DNA engineering experiments."
     },
     {
-        "id": 151,
+        "_id": 151,
         "name": "Mew",
         "species": "New Species Pokémon",
         "description": "So rare that it is still said to be a mirage by many experts. Only a few people have seen it worldwide."
