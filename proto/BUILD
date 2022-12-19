@@ -8,12 +8,6 @@ proto_library(
     srcs = ["pokemon.proto"],
 )
 
-go_proto_library(
-    name = "pokemon_proto_go",
-    importpath = "common/proto/pokemon",
-    protos = [":pokemon_proto"],
-)
-
 java_proto_library(
     name = "pokemon_proto_java",
     deps = [":pokemon_proto"],
@@ -23,4 +17,10 @@ java_grpc_library(
     name = "pokemon_java_grpc",
     srcs = [":pokemon_proto"],
     deps = [":pokemon_proto_java"],
+)
+
+go_proto_library(
+    name = "pokemon_proto_go",
+    importpath = "pkmn.city/proto/pokemon",
+    protos = [":pokemon_proto"],
 )

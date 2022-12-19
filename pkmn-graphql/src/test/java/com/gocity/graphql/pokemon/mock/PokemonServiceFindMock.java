@@ -1,8 +1,8 @@
 package com.gocity.graphql.pokemon.mock;
 
 import com.google.protobuf.util.JsonFormat;
-import common.proto.pokemon.Pokemon;
-import common.proto.pokemon.PokemonServiceGrpc;
+import city.pkmn.proto.pokemon.Pokemon;
+import city.pkmn.proto.pokemon.PokemonServiceGrpc;
 import io.grpc.stub.StreamObserver;
 
 public class PokemonServiceFindMock extends PokemonServiceGrpc.PokemonServiceImplBase {

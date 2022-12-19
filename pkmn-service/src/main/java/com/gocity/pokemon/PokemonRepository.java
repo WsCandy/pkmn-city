@@ -1,6 +1,6 @@
 package com.gocity.pokemon;
 
-import common.proto.pokemon.Pokemon;
+import city.pkmn.proto.pokemon.Pokemon;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;

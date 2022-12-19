@@ -1,6 +1,6 @@
 package com.gocity.pokemon;
 
-import common.proto.pokemon.Pokemon;
+import city.pkmn.proto.pokemon.Pokemon;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 

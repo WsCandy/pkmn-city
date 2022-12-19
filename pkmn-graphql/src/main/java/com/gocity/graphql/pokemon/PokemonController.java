@@ -1,6 +1,6 @@
 package com.gocity.graphql.pokemon;
 
-import common.proto.pokemon.Pokemon;
+import city.pkmn.proto.pokemon.Pokemon;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;

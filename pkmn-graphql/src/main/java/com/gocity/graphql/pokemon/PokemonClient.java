@@ -1,8 +1,8 @@
 package com.gocity.graphql.pokemon;
 
-import common.proto.pokemon.Pokemon;
-import common.proto.pokemon.Pokemon.PokemonResponse;
-import common.proto.pokemon.PokemonServiceGrpc;
+import city.pkmn.proto.pokemon.Pokemon;
+import city.pkmn.proto.pokemon.Pokemon.PokemonResponse;
+import city.pkmn.proto.pokemon.PokemonServiceGrpc;
 import io.grpc.Channel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
