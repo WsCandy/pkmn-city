@@ -21,6 +21,7 @@ java_grpc_library(
 
 go_proto_library(
     name = "pokemon_proto_go",
+    compiler = "@io_bazel_rules_go//proto:go_grpc",
     importpath = "pkmn.city/proto/pokemon",
     protos = [":pokemon_proto"],
 )

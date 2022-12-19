@@ -1,17 +1,16 @@
 workspace(name = "pkmn-city")
 
-# Java
-SPRING_BOOT_VERSION = "3.0.0"
-
-GRPC_VERSION = "1.5.1"
-
-SL4J_VERSION = "1.7.0"
-
-JUNIT_JUPITER_VERSION = "5.9.1"
-
-JUNIT_PLATFORM_VERSION = "1.9.1"
-
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "com_google_protobuf",
+    sha256 = "22fdaf641b31655d4b2297f9981fa5203b2866f8332d3c6333f6b0107bb320de",
+    strip_prefix = "protobuf-21.12",
+    urls = [
+        "https://mirror.bazel.build/github.com/protocolbuffers/protobuf/archive/v21.12.tar.gz",
+        "https://github.com/protocolbuffers/protobuf/archive/v21.12.tar.gz",
+    ],
+)
 
 http_archive(
     name = "io_grpc_grpc_java",
@@ -20,6 +19,7 @@ http_archive(
     url = "https://github.com/grpc/grpc-java/archive/v1.51.0.zip",
 )
 
+# Java
 http_archive(
     name = "rules_jvm_external",
     sha256 = "c21ce8b8c4ccac87c809c317def87644cdc3a9dd650c74f41698d761c95175f3",
@@ -34,44 +34,29 @@ http_archive(
     url = "https://github.com/bazel-contrib/rules_jvm/archive/refs/tags/v0.9.0.tar.gz",
 )
 
-load("@rules_jvm_external//:defs.bzl", "maven_install")
-load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS")
-load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS")
-load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
+# GoLang
+http_archive(
+    name = "io_bazel_rules_go",
+    sha256 = "56d8c5a5c91e1af73eca71a6fab2ced959b67c86d12ba37feedb0a2dfea441a6",
+    urls = [
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_go/releases/download/v0.37.0/rules_go-v0.37.0.zip",
+        "https://github.com/bazelbuild/rules_go/releases/download/v0.37.0/rules_go-v0.37.0.zip",
+    ],
+)
 
-grpc_java_repositories()
-
-load("@com_google_protobuf//:protobuf_deps.bzl", "PROTOBUF_MAVEN_ARTIFACTS")
+# Protobuf stuff
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 
 protobuf_deps()
 
-# Java Dependencies
-maven_install(
-    artifacts = [
-        "org.projectlombok:lombok:1.18.24",
-        "net.javacrumbs.future-converter:future-converter-java8-guava:1.2.0",
-        "org.springframework.boot:spring-boot:%s" % SPRING_BOOT_VERSION,
-        "org.springframework.boot:spring-boot-starter-web:%s" % SPRING_BOOT_VERSION,
-        "org.springframework.boot:spring-boot-starter:%s" % SPRING_BOOT_VERSION,
-        "org.springframework.boot:spring-boot-starter-graphql:%s" % SPRING_BOOT_VERSION,
-        "org.springframework.boot:spring-boot-starter-data-mongodb:%s" % SPRING_BOOT_VERSION,
-        "org.springframework.boot:spring-boot-starter-test:%s" % SPRING_BOOT_VERSION,
-        "org.springframework.graphql:spring-graphql-test:1.1.0",
-        "org.hamcrest:hamcrest:2.2",
-        "com.google.protobuf:protobuf-java-util:3.21.12",
-        "org.junit.platform:junit-platform-launcher:%s" % JUNIT_PLATFORM_VERSION,
-        "org.junit.platform:junit-platform-reporting:%s" % JUNIT_PLATFORM_VERSION,
-        "org.junit.jupiter:junit-jupiter-api:%s" % JUNIT_JUPITER_VERSION,
-        "org.junit.jupiter:junit-jupiter-params:%s" % JUNIT_JUPITER_VERSION,
-        "org.junit.jupiter:junit-jupiter-engine:%s" % JUNIT_JUPITER_VERSION,
-    ] + IO_GRPC_GRPC_JAVA_ARTIFACTS + PROTOBUF_MAVEN_ARTIFACTS,
-    generate_compat_repositories = True,
-    override_targets = IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS,
-    repositories = [
-        "https://repo.maven.apache.org/maven2/",
-    ],
-)
+# Java
+load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
+
+grpc_java_repositories()
+
+load("//:java_packages.bzl", "java_packages")
+
+java_packages()
 
 load("@maven//:compat.bzl", "compat_repositories")
 
@@ -86,24 +71,11 @@ load("@contrib_rules_jvm//:setup.bzl", "contrib_rules_jvm_setup")
 contrib_rules_jvm_setup()
 
 # Golang
-http_archive(
-    name = "io_bazel_rules_go",
-    sha256 = "2b1641428dff9018f9e85c0384f03ec6c10660d935b750e3fa1492a281a53b0f",
-    urls = [
-        "https://mirror.bazel.build/github.com/bazelbuild/rules_go/releases/download/v0.29.0/rules_go-v0.29.0.zip",
-        "https://github.com/bazelbuild/rules_go/releases/download/v0.29.0/rules_go-v0.29.0.zip",
-    ],
-)
+load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
-http_archive(
-    name = "com_google_protobuf",
-    sha256 = "d0f5f605d0d656007ce6c8b5a82df3037e1d8fe8b121ed42e536f569dec16113",
-    strip_prefix = "protobuf-3.14.0",
-    urls = [
-        "https://mirror.bazel.build/github.com/protocolbuffers/protobuf/archive/v3.14.0.tar.gz",
-        "https://github.com/protocolbuffers/protobuf/archive/v3.14.0.tar.gz",
-    ],
-)
+go_rules_dependencies()
+
+go_register_toolchains(version = "1.19.4")
 
 http_archive(
     name = "bazel_gazelle",
@@ -114,17 +86,9 @@ http_archive(
     ],
 )
 
-load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
-load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies", "go_repository")
-
-go_repository(
-    name = "com_github_gorilla_mux",
-    importpath = "github.com/gorilla/mux",
-    tag = "v1.8.0",
-)
-
-go_rules_dependencies()
-
-go_register_toolchains(version = "1.19.4")
+load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
+load("//:go_repositories.bzl", "go_repositories")
 
 gazelle_dependencies()
+
+go_repositories()
