@@ -47,9 +47,3 @@ When you run the database for the the first time there won't be any data in it s
 To seed the database connect to it using your tool of choice and create a database called `pkmn` with a collection called `pokemon`.
 
 The data you want to import into the `pokemon` collection is located in the `pkmn-service/data/mongo` folder.
-
-### Creating a User
-After seeding the database you'll need to create a user for the `pkmn` database you can do this by running:
-```
-db.createUser({ "user": "user", "pwd": "password", roles: ["readWrite"] })
-```

@@ -1,7 +1,7 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://user:password@localhost:27017/pkmn?serverSelectionTimeoutMS=100&connectTimeoutMS=100
+      uri: mongodb://user:password@localhost:27017/pkmn?serverSelectionTimeoutMS=100&connectTimeoutMS=100&authSource=admin
 
 logging:
   level:
