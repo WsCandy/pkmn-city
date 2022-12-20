@@ -1,6 +1,7 @@
 syntax = "proto3";
 
-option java_package = "common.proto.pokemon";
+option java_package = "city.pkmn.proto.pokemon";
+option go_package = "pkmn.city/proto/pokemon";
 
 package pokemon;
 

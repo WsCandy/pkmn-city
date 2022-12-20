@@ -1,8 +1,8 @@
 package com.gocity.pokemon;
 
-import common.proto.pokemon.Pokemon.PokemonRequest;
-import common.proto.pokemon.Pokemon.PokemonResponse;
-import common.proto.pokemon.PokemonServiceGrpc;
+import city.pkmn.proto.pokemon.Pokemon.PokemonRequest;
+import city.pkmn.proto.pokemon.Pokemon.PokemonResponse;
+import city.pkmn.proto.pokemon.PokemonServiceGrpc;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import lombok.extern.slf4j.Slf4j;
