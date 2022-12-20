@@ -2,65 +2,41 @@ package main
 
 import (
 	"context"
-	"encoding/json"
-	"fmt"
-	"github.com/gorilla/mux"
-	"net/http"
-	"os"
-	"os/signal"
-	"time"
+	"google.golang.org/grpc"
+	"log"
+	"net"
+	pkmn "pkmn.city/proto/pokemon"
 )
 
+type PokemonServer struct {
+	pkmn.UnimplementedPokemonServiceServer
+}
+
+func (s *PokemonServer) Find(ctx context.Context, request *pkmn.PokemonRequest) (*pkmn.PokemonResponse, error) {
+	log.Printf("Received: %v", request.Id)
+
+	return &pkmn.PokemonResponse{
+		Id:          1,
+		Name:        "Bulbasaur",
+		Species:     "Seed Pokémon",
+		Description: "Hello from GoLang",
+	}, nil
+}
+
 func main() {
-	port := 8082
-	waitTime := time.Second * 5
-	channel := make(chan os.Signal, 1)
+	listen, err := net.Listen("tcp", ":8081")
 
-	router := mux.NewRouter().StrictSlash(true)
-	router.Use(JsonMiddleware)
-
-	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusOK)
-
-		response := Response{
-			Message: "ok",
-		}
-
-		if err := json.NewEncoder(w).Encode(response); err != nil {
-			fmt.Println(fmt.Sprintf("error encoding response: %s", err.Error()))
-		}
-	})
-
-	server := &http.Server{
-		Addr:    fmt.Sprintf("0.0.0.0:%d", port),
-		Handler: router,
+	if err != nil {
+		log.Fatalf("failed to listen: %v", err)
 	}
 
-	go func() {
-		fmt.Println(fmt.Sprintf("Starting Webserver on port %d", port))
+	s := grpc.NewServer()
 
-		if err := server.ListenAndServe(); err != nil {
-			if err != http.ErrServerClosed {
-				fmt.Println(fmt.Sprintf("HTTP server error :: %v", err))
-				channel <- os.Interrupt
-			}
-		}
-	}()
+	pkmn.RegisterPokemonServiceServer(s, &PokemonServer{})
 
-	// Send os interrupt signal to channel
-	signal.Notify(channel, os.Interrupt)
+	log.Printf("PokemonServer listening at %v", listen.Addr())
 
-	// Block until a cancel signal is received
-	<-channel
-
-	fmt.Println("Received cancel signal, shutting down...")
-
-	ctx, cancel := context.WithTimeout(context.Background(), waitTime)
-	defer cancel()
-
-	if err := server.Shutdown(ctx); err != nil {
-		fmt.Println(err)
+	if err := s.Serve(listen); err != nil {
+		log.Fatalf("failed to serve: %v", err)
 	}
-
-	os.Exit(0)
 }

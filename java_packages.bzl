@@ -1,7 +1,5 @@
 load("@rules_jvm_external//:defs.bzl", "maven_install")
-load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS")
-load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS")
-load("@com_google_protobuf//:protobuf_deps.bzl", "PROTOBUF_MAVEN_ARTIFACTS")
+load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS", "grpc_java_repositories")
 
 SPRING_BOOT_VERSION = "3.0.0"
 GRPC_VERSION = "1.5.1"
@@ -28,7 +26,7 @@ def java_packages():
             "org.junit.jupiter:junit-jupiter-api:%s" % JUNIT_JUPITER_VERSION,
             "org.junit.jupiter:junit-jupiter-params:%s" % JUNIT_JUPITER_VERSION,
             "org.junit.jupiter:junit-jupiter-engine:%s" % JUNIT_JUPITER_VERSION,
-        ] + IO_GRPC_GRPC_JAVA_ARTIFACTS + PROTOBUF_MAVEN_ARTIFACTS,
+        ] + IO_GRPC_GRPC_JAVA_ARTIFACTS,
         generate_compat_repositories = True,
         override_targets = IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS,
         repositories = [

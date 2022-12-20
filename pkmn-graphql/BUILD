@@ -34,6 +34,7 @@ java_library(
     ],
     deps = [
         ":lombok",
+        "//proto:java_pokemon_grpc",
         "@io_grpc_grpc_java//api",
         "@io_grpc_grpc_java//protobuf",
         "@io_grpc_grpc_java//stub",
@@ -49,8 +50,6 @@ java_library(
         "@maven//:org_springframework_spring_beans",
         "@maven//:org_springframework_spring_context",
         "@maven//:org_springframework_spring_core",
-        "@pkmn-city//proto:pokemon_java_grpc",
-        "@pkmn-city//proto:pokemon_proto_java",
     ],
 )
 
@@ -70,6 +69,7 @@ java_test_suite(
     deps = [
         ":deps",
         ":test-resources",
+        "//proto:java_pokemon_grpc",
         "@io_grpc_grpc_java//api",
         "@io_grpc_grpc_java//core:inprocess",
         "@io_grpc_grpc_java//core:util",
@@ -83,8 +83,6 @@ java_test_suite(
         "@maven//:org_springframework_spring_context",
         "@maven//:org_springframework_spring_core",
         "@maven//:org_springframework_spring_test",
-        "@pkmn-city//proto:pokemon_java_grpc",
-        "@pkmn-city//proto:pokemon_proto_java",
         artifact("org.junit.jupiter:junit-jupiter-api"),
         artifact("org.junit.jupiter:junit-jupiter-params"),
     ],

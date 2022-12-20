@@ -4,6 +4,7 @@ go_binary(
     name = "app",
     srcs = glob(["**/*.go"]),
     deps = [
-        "@com_github_gorilla_mux//:mux",
+        "//proto:go_pokemon_grpc",
+        "@org_golang_google_grpc//:go_default_library",
     ],
 )

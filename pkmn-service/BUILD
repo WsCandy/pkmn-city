@@ -29,6 +29,7 @@ java_library(
     ],
     deps = [
         ":lombok",
+        "//proto:java_pokemon_grpc",
         "@io_grpc_grpc_java//api",
         "@io_grpc_grpc_java//protobuf",
         "@io_grpc_grpc_java//stub",
@@ -45,7 +46,5 @@ java_library(
         "@maven//:org_springframework_spring_beans",
         "@maven//:org_springframework_spring_context",
         "@maven//:org_springframework_spring_core",
-        "@pkmn-city//proto:pokemon_java_grpc",
-        "@pkmn-city//proto:pokemon_proto_java",
     ],
 )
