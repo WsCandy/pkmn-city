@@ -12,8 +12,8 @@ type PokemonServer struct {
 	pkmn.UnimplementedPokemonServiceServer
 }
 
-func (s *PokemonServer) Find(ctx context.Context, request *pkmn.PokemonRequest) (*pkmn.PokemonResponse, error) {
-	log.Printf("Received: %v", request.Id)
+func (server *PokemonServer) Find(ctx context.Context, request *pkmn.PokemonRequest) (*pkmn.PokemonResponse, error) {
+	log.Printf("Received ID: %v", *request.Id)
 
 	return &pkmn.PokemonResponse{
 		Id:          1,

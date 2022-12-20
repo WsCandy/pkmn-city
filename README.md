@@ -11,11 +11,11 @@ $ brew install bazelisk
 Once you have `bazelisk` installed you can start building and running targets.
 
 ### Building
-There are currently three projects in this repo `pkmn-graphql`, `pkmn-service`, and `pkmn-moves`. You can build these by running the following commands:
+There are currently three projects in this repo `pkmn-graphql`, `pkmn-service`, and `pkmn-service-go`. You can build these by running the following commands:
 ```
 $ bazel build //pkmn-graphql:app
 $ bazel build //pkmn-service:app
-$ bazel build //pkmn-moves:app
+$ bazel build //pkmn-service-go:app
 ```
 
 > To build production jars for the Java projects change the name to `app_deploy.jar`.
@@ -25,11 +25,11 @@ To run the projects simple do the following:
 ```
 $ bazel run //pkmn-graphql:app -- --spring.profiles.active=local
 $ bazel run //pkmn-service:app -- --spring.profiles.active=local
-$ bazel run //pkmn-moves:app
+$ bazel run //pkmn-service-go:app
 ```
 Once running `pkmn-graphql` will be available on port `8080` and `pkmn-service` will be available on port `8081`.
 
-> For testing reasons `pkmn-moves` is also on port `8081` and is interchangeable with `pkmn-service`
+> For testing reasons `pkmn-service-go` is also on port `8081` and is interchangeable with `pkmn-service`
 
 - http://localhost:8080/graphiql?path=/graphql
 
