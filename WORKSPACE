@@ -75,3 +75,18 @@ gazelle_dependencies()
 load("//:go_repositories.bzl", "go_repositories")
 
 go_repositories()
+
+# Rust
+load("@rules_proto_grpc//rust:repositories.bzl", rules_proto_grpc_rust_repos = "rust_repos")
+
+rules_proto_grpc_rust_repos()
+
+load("@com_github_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")
+
+grpc_deps()
+
+load("@rules_rust//rust:repositories.bzl", "rules_rust_dependencies", "rust_register_toolchains")
+
+rules_rust_dependencies()
+
+rust_register_toolchains(edition = "2021")
