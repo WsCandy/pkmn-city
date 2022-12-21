@@ -16,6 +16,7 @@ There are currently three projects in this repo `pkmn-graphql`, `pkmn-service`, 
 $ bazel build //pkmn-graphql:app
 $ bazel build //pkmn-service:app
 $ bazel build //pkmn-service-go:app
+$ bazel build //pkmn-service-rust:app
 ```
 
 > To build production jars for the Java projects change the name to `app_deploy.jar`.
@@ -26,10 +27,11 @@ To run the projects simple do the following:
 $ bazel run //pkmn-graphql:app -- --spring.profiles.active=local
 $ bazel run //pkmn-service:app -- --spring.profiles.active=local
 $ bazel run //pkmn-service-go:app
+$ bazel run //pkmn-service-rust:app
 ```
 Once running `pkmn-graphql` will be available on port `8080` and `pkmn-service` will be available on port `8081`.
 
-> For testing reasons `pkmn-service-go` is also on port `8081` and is interchangeable with `pkmn-service`
+> For testing reasons `pkmn-service-go` and `pkmn-service-rust` are also on port `8081` and is interchangeable with `pkmn-service`
 
 - http://localhost:8080/graphiql?path=/graphql
 
