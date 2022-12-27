@@ -1,6 +1,7 @@
 package com.gocity.graphql.pokemon.config;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import io.grpc.Channel;
 import io.grpc.Grpc;
 import io.grpc.InsecureChannelCredentials;
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.Map;
@@ -30,7 +32,8 @@ public class GrpcConfig {
             return new Gson()
                 .fromJson(string, Map.class);
 
-        } catch (Exception e) {
+        } catch (JsonSyntaxException | IOException e) {
+            log.warn("{}: Error loading GRPC config file", e.getClass());
             return Collections.emptyMap();
         }
     }

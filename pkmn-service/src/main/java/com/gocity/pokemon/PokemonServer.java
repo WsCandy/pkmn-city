@@ -2,7 +2,6 @@ package com.gocity.pokemon;
 
 import io.grpc.Grpc;
 import io.grpc.InsecureServerCredentials;
-import io.grpc.Server;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -14,23 +13,21 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 public class PokemonServer {
 
-    private final Server server;
-
     @Autowired
     public PokemonServer(PokemonService service) throws IOException, InterruptedException {
-        server = Grpc.newServerBuilderForPort(8081, InsecureServerCredentials.create())
-            .addService(service)
-            .build();
+        var server = Grpc.newServerBuilderForPort(8081, InsecureServerCredentials.create())
+                .addService(service)
+                .build();
 
         log.debug("Starting gRPC Server on port {}", 8081);
-
+        
         server.start();
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             log.debug("JVM shut down... shutting down...");
             try {
                 server.shutdown()
-                    .awaitTermination(10L, TimeUnit.SECONDS);
+                        .awaitTermination(10L, TimeUnit.SECONDS);
 
             } catch (InterruptedException e) {
                 log.error("There was a problem shutting down the server");

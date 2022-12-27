@@ -30,13 +30,13 @@ func main() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 
-	s := grpc.NewServer()
+	server := grpc.NewServer()
 
-	pkmn.RegisterPokemonServiceServer(s, &PokemonServer{})
+	pkmn.RegisterPokemonServiceServer(server, &PokemonServer{})
 
 	log.Printf("PokemonServer listening at %v", listen.Addr())
 
-	if err := s.Serve(listen); err != nil {
+	if err := server.Serve(listen); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}
 }

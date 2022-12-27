@@ -1,14 +1,12 @@
-use rust_pokemon_grpc::PokemonResponse;
-use rust_pokemon_grpc::PokemonRequest;
-use rust_pokemon_grpc::PokemonService;
-use rust_pokemon_grpc::PokemonServiceServer;
-
+use grpc::Result;
 use grpc::ServerBuilder;
+use grpc::ServerHandlerContext;
 use grpc::ServerRequestSingle;
 use grpc::ServerResponseUnarySink;
-use grpc::ServerHandlerContext;
-use grpc::Result;
-
+use rust_pokemon_grpc::PokemonRequest;
+use rust_pokemon_grpc::PokemonResponse;
+use rust_pokemon_grpc::PokemonService;
+use rust_pokemon_grpc::PokemonServiceServer;
 use std::thread;
 
 // IDE support for Rust with Bazel is limited at the moment so it's difficult to develop and maintain.
@@ -24,7 +22,6 @@ impl PokemonServer {
 // protoc-gen-grpc_rust_plugin does not currently support proto3 optional syntax to compile remove the optional declaration in the .proto files.
 impl PokemonService for PokemonServer {
     fn find(&self, _o: ServerHandlerContext, _req: ServerRequestSingle<PokemonRequest>, resp: ServerResponseUnarySink<PokemonResponse>) -> Result<()> {
-
         resp.finish(PokemonResponse {
             id: 1,
             name: "Bulbasaur".to_owned(),
